@@ -38,7 +38,7 @@ If you like the plugin please [Donate here](http://tinyurl.com/owxtkmt).
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. (Optional) Customize the plugin in the Settings > FB Comments menu
 
-Visit our <a href="http://vivacityinfotech.net/wp-facebook-comments-by-vivacity">demo page</a> for more information.
+Visit our <a href="http://vivacityinfotech.net/blog/wp-facebook-comments-by-vivacity/">demo page</a> for more information.
 
 == Frequently Asked Questions ==
 
