@@ -1,5 +1,4 @@
 <?php
-
 add_action('wp_head', 'fbopengraph');
 add_action('wp_footer', 'fbmlsetting');
 add_filter ('the_content', 'commentscode');
@@ -99,13 +98,4 @@ if (!isset($fboptn['count'])) {$fboptn['count'] = "off";}
     }}}
   }
 return $content;
-}
-
-
-
-
-
-  ?>
- 
- 
- 
+}?>
