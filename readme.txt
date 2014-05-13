@@ -1,11 +1,11 @@
 === Facebook Comments by Vivacity ===
 Contributors: vivacityinfotech.jaipur
 Donate link: http://tinyurl.com/owxtkmt
-Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Open Graph, Opengraph, Protocol , XFBML , HTML5 , Moderation , Moderator.
+Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Open Graph, Opengraph, Protocol , XFBML , HTML5 , Moderation , Moderator, shortcode , template , template shortcode , WP comments , WP default comments.
 License: GPLv2 or later
 Requires at least:3.0
 Tested up to:3.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 == Description ==
 
@@ -19,6 +19,8 @@ You cab also customize setting for following features:
 * You can set - Color Scheme (Light or Dark)
 * HTML5 and XFBML versions of facebook comments.
 * Moderation option.
+* Shortcode for templates or posts/pages/home.
+* Feature for remove wordpress default comments on posts/pages.
 
 = Rate Us / Feedback =
 
@@ -45,14 +47,34 @@ Visit our <a href="http://vivacityinfotech.net/blog/wp-facebook-comments-by-viva
 = Issues with display =
 * Please update to latest version. Up-to-date API's are available.
 
+= How can add Facebook Comments into templates  =
+You can insert echo do_shortcode('[vivafbcomment]'); code into your templates for use this shortcode.
 
+You can also use below options to override the the settings used above.
+
+* url - leave blank for current URL
+* width - minimum must be 350
+* num - number of comments
+* count - comment count on/off
+* scheme - color scheme: light/dark
+* pluginsite - enter "1" to link to the plugin
+
+For Example:
+
+[vivafbcomment url="http://vivacityinfotech.net/" width="375" count="on" num="6" countmsg="awesome comments"]
 
 == Screenshots ==
 
-
-
+1. "Facebook Comments by Vivacity" plugin installed and appears in the plugins menu.
+2. "Facebook Comments by Vivacity" Settings Section.
+3. Displaying Facebook Comments on home page.
+4. Displaying Facebook Comments on page.
 
 == Changelog ==
 
-= 1.0.o =
-* Stable version.
+= 1.0.2 =
+* Feature for remove wordpress default comments on posts/pages.
+* shortcode for Facebook Comments.
+
+= 1.0.1 =
+* Intial Release of Plugin
