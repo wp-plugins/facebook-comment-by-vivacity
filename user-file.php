@@ -190,8 +190,4 @@ function commentshortcode($fbsrt) {
         }
   return $contentshortcode;
 }
-
 ?>
- 
- 
- 
