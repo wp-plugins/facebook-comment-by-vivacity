@@ -5,7 +5,6 @@ Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Op
 License: GPLv2 or later
 Requires at least:3.0
 Tested up to:3.9
-Stable tag: 1.0.2
 
 == Description ==
 
