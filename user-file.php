@@ -131,14 +131,14 @@ if($fboptn['appID'] != "") {
 
     if (!empty($fboptn['pluginsite'])) {
     	if($fboptn['pluginsite'] == 'on'){
-      $content .= '<p>Facebook Comments Plugin Powered by <a href="http://www.vivacityinfotech.com"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
+      $content .= '<p>'.__( 'Facebook Comments Plugin Powered by', 'facebook-comment-by-vivacity' ). '<a href="http://www.vivacityinfotech.net"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
 	}}
     
     }
 else {
 	$fb_adminUrl = get_admin_url()."options-general.php?page=fbcomment";
    $content .= '<div class="error" style="color:#FF0000; font-weight:bold;">
-            <p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comments-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comments-by-vivacity' )
+            <p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comment-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comment-by-vivacity' )
             .'</a></p>
             </div>';
    }
@@ -178,14 +178,14 @@ function commentshortcode($fbsrt) {
 
 	if (!empty($fbsrtcode['pluginsite'])) {
 		if($fbsrtcode['pluginsite'] == 'on'){
-      $contentshortcode .= '<p>Facebook Comments Plugin Powered by <a href="http://www.vivacityinfotech.com"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
+      $contentshortcode .= '<p>'.__( 'Facebook Comments Plugin Powered by', 'facebook-comment-by-vivacity' ). '<a href="http://www.vivacityinfotech.net"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
 	}}
 	
 	}
 	else {
        $fb_adminUrl = get_admin_url()."options-general.php?page=fbcomment";
    $contentshortcode .= '<div class="error" style="color:red; font-weight:bold;">
-            <p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comments-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comments-by-vivacity' )
+            <p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comment-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comment-by-vivacity' )
             .'</a></p>
             </div>';
         }

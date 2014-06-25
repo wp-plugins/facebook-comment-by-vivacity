@@ -47,7 +47,7 @@ add_action('admin_init', 'fbcomment_init' );
 
 // Add sub menu [FB Comments] page to the Settings menu. 
 function show_fbcomment_option() {
-	add_options_page( __( 'FB Comments', 'facebook-comments-by-vivacity' ), __( 'FB Comments', 'facebook-comments-by-vivacity' ), 'manage_options', __( 'fbcomment', 'facebook-comments-by-vivacity' ), 'fbcomment_option');
+	add_options_page( __( 'FB Comments', 'facebook-comment-by-vivacity' ), __( 'FB Comments', 'facebook-comment-by-vivacity' ), 'manage_options', __( 'fbcomment', 'facebook-comment-by-vivacity' ), 'fbcomment_option');
 }
 add_action('admin_menu', 'show_fbcomment_option');
 
@@ -56,9 +56,9 @@ function fbcomments_msg(){
  $fboptn = get_option('fbcomment');
 // print_r($fboptn);
    	if ($fboptn['appID'] == "") {
-	$fb_adminUrl = get_admin_url()."options-general.php?page=". __( "fbcomment", "facebook-comments-by-vivacity" );
+	$fb_adminUrl = get_admin_url()."options-general.php?page=". __( "fbcomment", "facebook-comment-by-vivacity" );
       echo '<div class="error">
-            <p>'. __( "Please Enter Your Facebook App ID. Required for Fb comments.", "facebook-comments-by-vivacity" ).' <a href="'.$fb_adminUrl.'">'. __( "Click here", "facebook-comments-by-vivacity" ).'</a></p>
+            <p>'. __( "Please Enter Your Facebook App ID. Required for Fb comments.", "facebook-comment-by-vivacity" ).' <a href="'.$fb_adminUrl.'">'. __( "Click here", "facebook-comment-by-vivacity" ).'</a></p>
             </div>';
    }  
 }
@@ -71,7 +71,7 @@ function fbcomment_option() {
 <link href="<?php echo plugins_url( 'css/style.css' , __FILE__ ); ?>" rel="stylesheet" type="text/css">
  <div class="wrap">
    <div class="top">
-  <h3> <?php _e( "FB Comments Plugin", "facebook-comments-by-vivacity" ) ?> <small><?php _e("by","facebook-comments-by-vivacity") ?> <a href="http://www.vivacityinfotech.com" target="_blank"><?php _e("Vivacity Infotech Pvt. Ltd.","facebook-comments-by-vivacity") ?></a>
+  <h3> <?php _e( "FB Comments Plugin", "facebook-comment-by-vivacity" ) ?> <small><?php _e("by","facebook-comment-by-vivacity") ?> <a href="http://www.vivacityinfotech.com" target="_blank">Vivacity Infotech Pvt. Ltd.</a>
   </h3>
     </div> <!-- ------End of top-----------  -->
   	<div class="inner_wrap">
@@ -105,123 +105,123 @@ $domainname = str_replace('www.', '', $domainname);?>
 <?php if ($fboptn['appID'] == "") { 
 ?>
 <div class="error">
-<h3 class="setup"><?php _e("Set Up Your Facebook App ID","facebook-comments-by-vivacity") ?></h3> <!-- ----Set Up Your Facebook App ID -->
+<h3 class="setup"><?php _e("Set Up Your Facebook App ID","facebook-comment-by-vivacity") ?></h3> <!-- ----Set Up Your Facebook App ID -->
 	<table class="form-table admintbl">
 	  <tr>
 	   <th>
-      <strong><a href="https://developers.facebook.com/apps" target="_blank"><?php _e("Create an App","facebook-comments-by-vivacity") ?></a></strong><br>
-      <small><?php _e("To get App Id click on","facebook-comments-by-vivacity") ?> " <a href="https://developers.facebook.com/apps" target="_blank"> <?php _e("Create an App","facebook-comments-by-vivacity") ?></a>".</small>
+      <strong><a href="https://developers.facebook.com/apps" target="_blank"><?php _e("Create an App","facebook-comment-by-vivacity") ?></a></strong><br>
+      <small><?php _e("To get App Id click on","facebook-comment-by-vivacity") ?> " <a href="https://developers.facebook.com/apps" target="_blank"> <?php _e("Create an App","facebook-comment-by-vivacity") ?></a>".</small>
       </th>
-	   <td><small><?php _e("Enter App Id into below textbox.","facebook-comments-by-vivacity") ?></small><br>
+	   <td><small><?php _e("Enter App Id into below textbox.","facebook-comment-by-vivacity") ?></small><br>
 	       <input id="appID" type="text" name="fbcomment[appID]" value="<?php echo $fboptn['appID']; ?>" />
-	        <strong><?php _e("APP ID","facebook-comments-by-vivacity") ?></strong><br>
+	        <strong><?php _e("APP ID","facebook-comment-by-vivacity") ?></strong><br>
       </td>
 	  </tr>
 	</table> <!-- -----End Set Up Your Facebook App ID -->
 </div>
 <?php } else { ?>
-	<h3 class="title" id="fbappsettings"><?php _e("Facebook App Setting","facebook-comments-by-vivacity") ?></h3> <!-- ----Facebook App Setting -->
+	<h3 class="title" id="fbappsettings"><?php _e("Facebook App Setting","facebook-comment-by-vivacity") ?></h3> <!-- ----Facebook App Setting -->
 	<div id="fbappsettingstbl" class="togglediv">
 	<table class="form-table admintbl">
 		<tr>
-		  <th><small><?php _e("To edit your App ID click on below link:","facebook-comments-by-vivacity") ?></small><br>
-		  <strong><a href="https://developers.facebook.com/apps<?php if ($fboptn['appID'] != "") { echo "/".$fboptn['appID']."/summary"; } ?>" target="_blank"><?php _e("Your App Setup","facebook-comments-by-vivacity") ?></a></strong></th>
-		  <td><small><?php _e("choose your App and click","facebook-comments-by-vivacity") ?> <strong>  <?php _e("Edit Settings","facebook-comments-by-vivacity") ?></strong>. <?php _e("Please Enter","facebook-comments-by-vivacity") ?> <strong><?php echo $domainname; ?></strong> <?php _e('in both "App Domains" and "Site URL"',"facebook-comments-by-vivacity") ?></small></td>
+		  <th><small><?php _e("To edit your App ID click on below link:","facebook-comment-by-vivacity") ?></small><br>
+		  <strong><a href="https://developers.facebook.com/apps<?php if ($fboptn['appID'] != "") { echo "/".$fboptn['appID']."/summary"; } ?>" target="_blank"><?php _e("Your App Setup","facebook-comment-by-vivacity") ?></a></strong></th>
+		  <td><small><?php _e("choose your App and click","facebook-comment-by-vivacity") ?> <strong>  <?php _e("Edit Settings","facebook-comment-by-vivacity") ?></strong>. <?php _e("Please Enter","facebook-comment-by-vivacity") ?> <strong><?php echo $domainname; ?></strong> <?php _e('in both "App Domains" and "Site URL"',"facebook-comment-by-vivacity") ?></small></td>
 		</tr>
 		<tr>
 		 <th>
-		 <a href="https://developers.facebook.com/apps" target="_blank"><?php _e("Create a New App","facebook-comments-by-vivacity") ?></a>     
+		 <a href="https://developers.facebook.com/apps" target="_blank"><?php _e("Create a New App","facebook-comment-by-vivacity") ?></a>     
 		 </th>
-		 <td><small><?php _e("If you want to set up a new App Id click","facebook-comments-by-vivacity") ?> <strong><?php _e("Create a New App","facebook-comments-by-vivacity") ?></strong> </small>
+		 <td><small><?php _e("If you want to set up a new App Id click","facebook-comment-by-vivacity") ?> <strong><?php _e("Create a New App","facebook-comment-by-vivacity") ?></strong> </small>
 		 </td>
 		</tr>
 	</table> <!-- -----End Facebook App Setting----- -->
 	</div>
 <?php } ?>	
-	<h3 class="title" id="mainsettings"><?php _e("Message Id","facebook-comments-by-vivacity") ?></h3> <!-- -----Main Settings -->
+	<h3 class="title" id="mainsettings"><?php _e("Main Settings","facebook-comment-by-vivacity") ?></h3> <!-- -----Main Settings -->
 	<div  id="mainsettingstbl" class="togglediv">
 	<table class="form-table admintbl">
 <?php if ($fboptn['appID']!="") { ?>
-		<tr><th><label for="appID"><?php _e("Facebook App ID","facebook-comments-by-vivacity") ?></label></th>
+		<tr><th><label for="appID"><?php _e("Facebook App ID","facebook-comment-by-vivacity") ?></label></th>
 			 <td><input id="appID" type="text" name="fbcomment[appID]" value="<?php echo $fboptn['appID']; ?>" /></td>
 		</tr>
 <?php } ?>
-		<tr><th><label for="fbml"><?php _e("Enable XFBML","facebook-comments-by-vivacity") ?></label></th>
-			<td><input id="fbml" name="fbcomment[fbml]" type="checkbox" value="on" <?php checked('on', $fboptn['fbml']); ?> /> <small><?php _e("only disable this if you already have XFBML enabled elsewhere","facebook-comments-by-vivacity") ?></small></td>
+		<tr><th><label for="fbml"><?php _e("Enable XFBML","facebook-comment-by-vivacity") ?></label></th>
+			<td><input id="fbml" name="fbcomment[fbml]" type="checkbox" value="on" <?php checked('on', $fboptn['fbml']); ?> /> <small><?php _e("only disable this if you already have XFBML enabled elsewhere","facebook-comment-by-vivacity") ?></small></td>
 		</tr>
-		<tr><th><label for="fbns"><?php _e("Use Facebook NameServer","facebook-comments-by-vivacity") ?></label></th>
-			<td><input id="fbns" name="fbcomment[fbns]" type="checkbox" value="on" <?php checked('on', $fboptn['fbml']); ?> /> <small><?php _e("only enable this if Facebook Comments do not appear","facebook-comments-by-vivacity") ?></small></td>
+		<tr><th><label for="fbns"><?php _e("Use Facebook NameServer","facebook-comment-by-vivacity") ?></label></th>
+			<td><input id="fbns" name="fbcomment[fbns]" type="checkbox" value="on" <?php checked('on', $fboptn['fbml']); ?> /> <small><?php _e("only enable this if Facebook Comments do not appear","facebook-comment-by-vivacity") ?></small></td>
 		</tr>
-		<tr><th><label for="opengraph"><?php _e("Use Open Graph NameServer","facebook-comments-by-vivacity") ?></label></th>
-			<td><input id="opengraph" name="fbcomment[opengraph]" type="checkbox" value="on" <?php checked('on', $fboptn['opengraph']); ?> /> <small><?php _e("only enable this if Facebook comments are not appearing, not all information is being passed to Facebook or if you have not enabled Open Graph elsewhere within WordPress","facebook-comments-by-vivacity") ?></small></td>
+		<tr><th><label for="opengraph"><?php _e("Use Open Graph NameServer","facebook-comment-by-vivacity") ?></label></th>
+			<td><input id="opengraph" name="fbcomment[opengraph]" type="checkbox" value="on" <?php checked('on', $fboptn['opengraph']); ?> /> <small><?php _e("only enable this if Facebook comments are not appearing, not all information is being passed to Facebook or if you have not enabled Open Graph elsewhere within WordPress","facebook-comment-by-vivacity") ?></small></td>
 		</tr>
-		<tr><th><label for="html5"><?php _e("Use HTML5","facebook-comments-by-vivacity") ?></label></th>
+		<tr><th><label for="html5"><?php _e("Use HTML5","facebook-comment-by-vivacity") ?></label></th>
 			<td><input id="html5" name="fbcomment[html5]" type="checkbox" value="on" <?php checked('on', $fboptn['html5']); ?> /></td>
 		</tr>
-		<tr><th><label for="pluginsite"><?php _e("Show plugin site url","facebook-comments-by-vivacity") ?>:</label></th>
-		   <td><input id="credit" name="fbcomment[pluginsite]" type="checkbox" value="on" <?php checked('on', $fboptn['pluginsite']); ?> /> <small><?php _e("only enable this if you want to show plugin site","facebook-comments-by-vivacity") ?>.</small>
+		<tr><th><label for="pluginsite"><?php _e("Show plugin site url","facebook-comment-by-vivacity") ?>:</label></th>
+		   <td><input id="credit" name="fbcomment[pluginsite]" type="checkbox" value="on" <?php checked('on', $fboptn['pluginsite']); ?> /> <small><?php _e("only enable this if you want to show plugin site","facebook-comment-by-vivacity") ?>.</small>
 		</td>
 		</tr>
    </table> 
    </div> <!-- ------End Main Settings--------- -->
-	<h3 id="displaysettings" class="title"><?php _e("Display Settings","facebook-comments-by-vivacity") ?></h3> <!-- ---Display Settings -->
+	<h3 id="displaysettings" class="title"><?php _e("Display Settings","facebook-comment-by-vivacity") ?></h3> <!-- ---Display Settings -->
 	<div id="displaysettingstbl" class="togglediv">
 	 <table class="form-table admintbl">
-		<tr><th><label for="posts"><?php _e( 'Posts', 'facebook-comments-by-vivacity' ); ?></label></th>
+		<tr><th><label for="posts"><?php _e( 'Posts', 'facebook-comment-by-vivacity' ); ?></label></th>
 		<td><input id="posts" name="fbcomment[posts]" type="checkbox" value="on" <?php checked('on', $fboptn['posts']); ?> /></td>
 		</tr>
-		<tr><th><label for="pages"><?php _e( 'Pages', 'facebook-comments-by-vivacity' ); ?></label></th>
+		<tr><th><label for="pages"><?php _e( 'Pages', 'facebook-comment-by-vivacity' ); ?></label></th>
 		<td><input id="pages" name="fbcomment[pages]" type="checkbox" value="on" <?php checked('on', $fboptn['pages']); ?> /></td>
 		</tr>
-		<tr><th><label for="homepage"><?php _e( 'Home', 'facebook-comments-by-vivacity' ); ?></label></th>
+		<tr><th><label for="homepage"><?php _e( 'Home', 'facebook-comment-by-vivacity' ); ?></label></th>
 		<td><input id="home" name="fbcomment[homepage]" type="checkbox" value="on" <?php checked('on', $fboptn['homepage']); ?> />
 		</td>
 		</tr>
-		<tr><th><label for="scheme"><?php _e( 'Colour Scheme', 'facebook-comments-by-vivacity' ); ?></label></th>
+		<tr><th><label for="scheme"><?php _e( 'Colour Scheme', 'facebook-comment-by-vivacity' ); ?></label></th>
 		<td>
 				<select name="fbcomment[scheme]">
-					<option value="light" <?php if ($fboptn['scheme'] == 'light') { echo ' selected="selected"'; } ?> ><?php _e( 'Light', 'facebook-comments-by-vivacity' ); ?></option>
-					<option value="dark" <?php if ($fboptn['scheme'] == 'dark') { echo ' selected="selected"'; } ?> ><?php _e( 'Dark', 'facebook-comments-by-vivacity' ); ?></option>
+					<option value="light" <?php if ($fboptn['scheme'] == 'light') { echo ' selected="selected"'; } ?> ><?php _e( 'Light', 'facebook-comment-by-vivacity' ); ?></option>
+					<option value="dark" <?php if ($fboptn['scheme'] == 'dark') { echo ' selected="selected"'; } ?> ><?php _e( 'Dark', 'facebook-comment-by-vivacity' ); ?></option>
 				</select>
 		</td>
 		</tr>
-		<tr><th><label for="num"><?php _e( 'Number of Comments', 'facebook-comments-by-vivacity' ); ?></label></th>
-			<td><input id="num" type="text" name="fbcomment[num]" value="<?php echo $fboptn['num']; ?>" /> <small> - <?php _e( 'Default no of comments is', 'facebook-comments-by-vivacity' ); ?> <strong>6
+		<tr><th><label for="num"><?php _e( 'Number of Comments', 'facebook-comment-by-vivacity' ); ?></label></th>
+			<td><input id="num" type="text" name="fbcomment[num]" value="<?php echo $fboptn['num']; ?>" /> <small> - <?php _e( 'Default no of comments is', 'facebook-comment-by-vivacity' ); ?> <strong>6
 			</strong></small>
 			</td>
 		</tr>
-		<tr><th><label for="width"><?php _e( 'Width', 'facebook-comments-by-vivacity' ); ?></label></th>
-			<td><input id="width" type="text" name="fbcomment[width]" value="<?php echo $fboptn['width']; ?>" />px <small> - <?php _e( 'Default comment box width is', 'facebook-comments-by-vivacity' ); ?> <strong>500px</strong></small>
+		<tr><th><label for="width"><?php _e( 'Width', 'facebook-comment-by-vivacity' ); ?></label></th>
+			<td><input id="width" type="text" name="fbcomment[width]" value="<?php echo $fboptn['width']; ?>" />px <small> - <?php _e( 'Default comment box width is', 'facebook-comment-by-vivacity' ); ?> <strong>500px</strong></small>
 			</td>
 		</tr>
-		<tr><th><label for="title"><?php _e( 'Title', 'facebook-comments-by-vivacity' ); ?></label></th>
+		<tr><th><label for="title"><?php _e( 'Title', 'facebook-comment-by-vivacity' ); ?></label></th>
 			<td><input id="title" type="text" name="fbcomment[title]" value="<?php echo $fboptn['title']; ?>" />
 			</td>
 		</tr>
-		<tr><th><label for="count"><?php _e( 'Show Comment Count', 'facebook-comments-by-vivacity' ); ?></label></th>
+		<tr><th><label for="count"><?php _e( 'Show Comment Count', 'facebook-comment-by-vivacity' ); ?></label></th>
 			<td><input id="count" name="fbcomment[count]" type="checkbox" value="on" <?php checked('on', $fboptn['count']); ?> />
 			</td>
 		</tr>
-		<tr><th><label for="countmsg"><?php _e( 'Comment text', 'facebook-comments-by-vivacity' ); ?></label></th>
+		<tr><th><label for="countmsg"><?php _e( 'Comment text', 'facebook-comment-by-vivacity' ); ?></label></th>
 			<td><input id="countmsg" type="text" name="fbcomment[countmsg]" value="<?php echo $fboptn['countmsg']; ?>" />
 			</td>
 		</tr>
 	</table>
 	</div>		<!-- -----End Display Settings---- -->
 	
-	<h3 id="moderation" class="title"><?php _e( 'Moderation Settings', 'facebook-comments-by-vivacity' ); ?></h3>   <!-- ------ Moderation--------- --> 
+	<h3 id="moderation" class="title"><?php _e( 'Moderation Settings', 'facebook-comment-by-vivacity' ); ?></h3>   <!-- ------ Moderation--------- --> 
 	<div id="moderationtbl" class="togglediv">
    <table class="form-table admintbl">
-	<tr><th><a href="https://developers.facebook.com/tools/comments<?php if ($fboptn['appID'] != "") { echo "?id=".$fboptn['appID']."&view=queue"; } ?>" target="_blank"><?php _e( 'Moderation Area', 'facebook-comments-by-vivacity' ); ?></a></th>
-					<td><small><?php _e( 'If you are a moderator, you will see notifications within facebook.com. If you don\'t want to have moderator status, click on "Moderation Area" and use this link to left.', 'facebook-comments-by-vivacity' ); ?></small></td>
+	<tr><th><a href="https://developers.facebook.com/tools/comments<?php if ($fboptn['appID'] != "") { echo "?id=".$fboptn['appID']."&view=queue"; } ?>" target="_blank"><?php _e( 'Moderation Area', 'facebook-comment-by-vivacity' ); ?></a></th>
+					<td><small><?php _e( 'If you are a moderator, you will see notifications within facebook.com. If you don\'t want to have moderator status, click on "Moderation Area" and use this link to left.', 'facebook-comment-by-vivacity' ); ?></small></td>
 	</tr>
-		<tr><th><label for="appID"><?php _e( 'Moderators', 'facebook-comments-by-vivacity' ); ?></label></th>
-		<td><input id="mods" type="text" name="fbcomment[mods]" value="<?php echo $fboptn['mods']; ?>" size="50" /><br><small><?php _e( 'All admins to the App ID can moderate comments,By default. To add moderators, enter each Facebook User ID by a comma without spaces. To find your Facebook User ID', 'facebook-comments-by-vivacity' ); ?>,<a href="https://developers.facebook.com/tools/explorer/?method=GET&path=me" target="blank"><?php _e( 'click here', 'facebook-comments-by-vivacity' ); ?></a> <?php _e( 'where you will see your own. To view someone else\'s, replace "me" with their username in the input provided', 'facebook-comments-by-vivacity' ); ?></small></td>
+		<tr><th><label for="appID"><?php _e( 'Moderators', 'facebook-comment-by-vivacity' ); ?></label></th>
+		<td><input id="mods" type="text" name="fbcomment[mods]" value="<?php echo $fboptn['mods']; ?>" size="50" /><br><small><?php _e( 'All admins to the App ID can moderate comments,By default. To add moderators, enter each Facebook User ID by a comma without spaces. To find your Facebook User ID', 'facebook-comment-by-vivacity' ); ?>,<a href="https://developers.facebook.com/tools/explorer/?method=GET&path=me" target="blank"><?php _e( 'click here', 'facebook-comment-by-vivacity' ); ?></a> <?php _e( 'where you will see your own. To view someone else\'s, replace "me" with their username in the input provided', 'facebook-comment-by-vivacity' ); ?></small></td>
 		</tr>
   </table>
   </div>  <!-- ------End Moderation--------- --> 
  
- <h3 id="" class="title"><?php _e( 'Hide/Show default wp comments', 'facebook-comments-by-vivacity' ); ?></h3>   <!-- ------ default wp comments--------- --> 
+ <h3 id="" class="title"><?php _e( 'Hide/Show default wp comments', 'facebook-comment-by-vivacity' ); ?></h3>   <!-- ------ default wp comments--------- --> 
 	<div id="" class="togglediv">
  <table class="form-table admintbl">
 <!-- ------everywhere--------- --> 
@@ -272,23 +272,23 @@ $domainname = str_replace('www.', '', $domainname);?>
  <div class="right">
 	<center>
 	<div class="bottom">
-		    <h3 id="shortcodedesc-comments" class="title"><?php _e( 'Shortcode For Templates', 'facebook-comments-by-vivacity' ); ?></h3>
+		    <h3 id="shortcodedesc-comments" class="title"><?php _e( 'Shortcode For Templates', 'facebook-comment-by-vivacity' ); ?></h3>
      <div id="shortcodedesctbl-comments" class="togglediv">  
 			<table class="right-tbl">
 				<tr><td>
-<p><?php _e( 'You can also insert FB Comment Box manually in any page or post or', 'facebook-comments-by-vivacity' ); ?> <strong><?php _e( 'template', 'facebook-comments-by-vivacity' ); ?></strong> <?php _e( 'by simply using the shortcode', 'facebook-comments-by-vivacity' ); ?> <strong>[vivafbcomment]</strong>. <br>
-<?php _e( 'You can insert', 'facebook-comments-by-vivacity' ); ?> <strong>echo do_shortcode('[vivafbcomment]');</strong> <?php _e( 'code into your templates for use this shortcode', 'facebook-comments-by-vivacity' ); ?>.
+<p><?php _e( 'You can also insert FB Comment Box manually in any page or post or', 'facebook-comment-by-vivacity' ); ?> <strong><?php _e( 'template', 'facebook-comment-by-vivacity' ); ?></strong> <?php _e( 'by simply using the shortcode', 'facebook-comment-by-vivacity' ); ?> <strong>[vivafbcomment]</strong>. <br>
+<?php _e( 'You can insert', 'facebook-comment-by-vivacity' ); ?> <strong>echo do_shortcode('[vivafbcomment]');</strong> <?php _e( 'code into your templates for use this shortcode', 'facebook-comment-by-vivacity' ); ?>.
 </p>
-<p><?php _e( 'You can also use below options to override the the settings used above.', 'facebook-comments-by-vivacity' ); ?></p>
+<p><?php _e( 'You can also use below options to override the the settings used above.', 'facebook-comment-by-vivacity' ); ?></p>
 <ul>
-<li><strong>url</strong> - <?php _e( 'leave blank for current URL', 'facebook-comments-by-vivacity' ); ?></li>
-<li><strong>width</strong> -  <?php _e( 'minimum must be', 'facebook-comments-by-vivacity' ); ?> <strong>350</strong></li>
-<li><strong>num</strong> - <?php _e( 'number of comments', 'facebook-comments-by-vivacity' ); ?></li>
-<li><strong>count</strong> - <?php _e( 'comment count on/off', 'facebook-comments-by-vivacity' ); ?></li>
-<li><strong>scheme</strong> - <?php _e( 'color scheme: light/dark', 'facebook-comments-by-vivacity' ); ?></li>
-<li><strong>pluginsite</strong> - <?php _e( 'enter', 'facebook-comments-by-vivacity' ); ?> "1" <?php _e( 'to link to the plugin', 'facebook-comments-by-vivacity' ); ?></li>
+<li><strong>url</strong> - <?php _e( 'leave blank for current URL', 'facebook-comment-by-vivacity' ); ?></li>
+<li><strong>width</strong> -  <?php _e( 'minimum must be', 'facebook-comment-by-vivacity' ); ?> <strong>350</strong></li>
+<li><strong>num</strong> - <?php _e( 'number of comments', 'facebook-comment-by-vivacity' ); ?></li>
+<li><strong>count</strong> - <?php _e( 'comment count on/off', 'facebook-comment-by-vivacity' ); ?></li>
+<li><strong>scheme</strong> - <?php _e( 'color scheme: light/dark', 'facebook-comment-by-vivacity' ); ?></li>
+<li><strong>pluginsite</strong> - <?php _e( 'enter', 'facebook-comment-by-vivacity' ); ?> "1" <?php _e( 'to link to the plugin', 'facebook-comment-by-vivacity' ); ?></li>
 </ul>
-<p><strong><?php _e( 'For Example', 'facebook-comments-by-vivacity' ); ?>:</strong></p>
+<p><strong><?php _e( 'For Example', 'facebook-comment-by-vivacity' ); ?>:</strong></p>
 <p>[vivafbcomment url="http://vivacityinfotech.net/" width="375" count="on" num="6" countmsg="awesome comments"]</p>
 			</td>
 				</tr>
@@ -296,11 +296,11 @@ $domainname = str_replace('www.', '', $domainname);?>
 	</div> 
 </div>
 <div class="bottom">
-		    <h3 id="download-comments" class="title">Download Free Plugins</h3>
+		    <h3 id="download-comments" class="title"><?php _e( 'Download Free Plugins', 'facebook-comment-by-vivacity' ); ?></h3>
      <div id="downloadtbl-comments" class="togglediv">  
 	<h3 class="company">
-<strong>Vivacity InfoTech Pvt. Ltd.</strong>
-has following plugins for you :
+<strong>Vivacity InfoTech Pvt. Ltd. </strong>
+<?php _e( 'has following plugins for you', 'facebook-comment-by-vivacity' ); ?> :
 </h3>
 <ul class="">
 <li><a target="_blank" href="http://wordpress.org/plugins/wp-twitter-feeds/">WP Twitter Feeds</a></li>
@@ -318,10 +318,10 @@ has following plugins for you :
   </div> 
 </div>		
 <div class="bottom">
-		    <h3 id="donatehere-comments" class="title">Donate Here</h3>
+		    <h3 id="donatehere-comments" class="title"><?php _e( 'Donate Here', 'facebook-comment-by-vivacity' ); ?></h3>
      <div id="donateheretbl-comments" class="togglediv">  
-     <p>If you want to donate , please click on below image.</p>
-	<a href="http://tinyurl.com/owxtkmt" target="_blank"><img class="donate" src="<?php echo plugins_url( 'assets/paypal.gif' , __FILE__ ); ?>" width="150" height="50" title="Donate here"></a>		
+     <p><?php _e( 'If you want to donate , please click on below image.', 'facebook-comment-by-vivacity' ); ?></p>
+	<a href="http://bit.ly/1icl56K" target="_blank"><img class="donate" src="<?php echo plugins_url( 'assets/paypal.gif' , __FILE__ ); ?>" width="150" height="50" title="<?php _e( 'Donate Here', 'facebook-comment-by-vivacity' ); ?>"></a>		
   </div> 
 </div>	
 <div class="bottom">

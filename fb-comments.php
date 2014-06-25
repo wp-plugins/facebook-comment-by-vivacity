@@ -1,12 +1,12 @@
 <?php
 /**
 * Plugin Name: Facebook Comments by Vivacity
-* Plugin URI: http://www.vivacityinfotech.com
+* Plugin URI: http://www.vivacityinfotech.net
 * Description: A simple Facebook Comments plugin for your site.It is a social plugin for enables Facebook users commenting on your site.
-* Version: 1.0.2
+* Version: 1.0.3 
 * Author: Vivacity Infotech Pvt. Ltd.
 * Author URI: http://www.vivacityinfotech.net
-Text Domain: facebook-comments-by-vivacity
+Text Domain: facebook-comment-by-vivacity
 Domain Path: /languages/
 */
 /*
@@ -26,24 +26,22 @@ Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : vivacityinfotech.jaipur@gm
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+ add_action('init', 'load_viva_transl');
+    function load_viva_transl()
+   {
+       load_plugin_textdomain('facebook-comment-by-vivacity', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
+   }
+  
 if ( is_admin())
 	require 'admin-file.php';
 else
 	require 'user-file.php';
 	
 
-   
-    add_action('init', 'load_viva_transl');
-     function load_viva_transl()
-    {
-      	
-        load_plugin_textdomain('facebook-comments-by-vivacity', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
-    }
-
 
 // Add link - settings on plugin page
 function fb_comment($links) {
-  $settings_link = '<a href="options-general.php?page=fbcomment">'. __( "Settings", "facebook-comments-by-vivacity" ).'</a>';
+  $settings_link = '<a href="options-general.php?page=fbcomment">'. __( "Settings", "facebook-comment-by-vivacity" ).'</a>';
  array_unshift($links, $settings_link);
  return $links;
 }
