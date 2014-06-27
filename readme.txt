@@ -1,6 +1,6 @@
 === Facebook Comments by Vivacity ===
 Contributors: vivacityinfotech.jaipur
-Donate link: http://tinyurl.com/owxtkmt
+Donate link: http://bit.ly/1icl56K
 Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Open Graph, Opengraph, Protocol , XFBML , HTML5 , Moderation , Moderator, shortcode , template , template shortcode , WP comments , WP default comments.
 License: GPLv2 or later
 Requires at least:3.0
@@ -9,7 +9,7 @@ Stable tag: 1.0.3
 
 == Description ==
 
-A simple Facebook Comments plugin for your site.It is a social plugin for enables Facebook users commenting on your site.There are potions for enable Facebook comments on posts/pages/home of your site.
+A simple Facebook Comments plugin for your website.It`s a social plugin for enables Facebook users commenting on your site.There are potions for enable Facebook comments on posts/pages/home of your website.
 
 You cab also customize setting for following features:
 
@@ -21,6 +21,17 @@ You cab also customize setting for following features:
 * Moderation option.
 * Shortcode for templates or posts/pages/home.
 * Feature for remove wordpress default comments on posts/pages.
+* Multi languages support.
+* Option for select facebook comment box language from a bunch of different languages to display facebook comment box into selected language.
+* POT file is added for plugin translation into your languages.
+= Translators =
+
+* English(US) (en_Us) - [Team Vivacity](http://vivacityinfotech.net/)
+* French (fr_FR) - [Team Vivacity](http://vivacityinfotech.net/)
+
+If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [us](http://vivacityinfotech.net/contact-us/) so that We can bundle it into this plugin.
+You can download the latest [POT file](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/trunk/languages/facebook-comment-by-vivacity.pot), and [PO files in each language](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/branches/languages/).
+
 
 = Rate Us / Feedback =
 
@@ -30,7 +41,7 @@ Please take the time to let us and others know about your experiences by leaving
 
 If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
 
-If you like the plugin please [Donate here](http://tinyurl.com/owxtkmt). 
+If you like the plugin please [Donate here](http://bit.ly/1icl56K). 
 
 
 == Installation ==
@@ -71,6 +82,11 @@ For Example:
 4. Displaying Facebook Comments on page.
 
 == Changelog ==
+
+= 1.0.3 =
+* Multi languages support.
+* POT file added for translate plugin in your language.
+* Option added for select facebook comment box language from a bunch of different languages to display facebook comment box into selected language.
 
 = 1.0.2 =
 * Feature for remove wordpress default comments on posts/pages.
