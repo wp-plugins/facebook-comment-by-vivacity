@@ -12,15 +12,17 @@ global $fboptn;
 // ---code from facebook comment code generator
 function fbmlsetting() {
 	$fboptn = get_option('fbcomment');
+	
+	
 if (!isset($fboptn['fbml'])) {$fboptn['fbml'] = "";}
 if ($fboptn['fbml'] == 'on') {
-?>
+	?>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_IN/all.js#xfbml=1&appId=<?php echo $fboptn['appID']; ?>";
+  js.src = "//connect.facebook.net/<?php echo $fboptn['lang']; ?>/all.js#xfbml=1&appId=<?php echo $fboptn['appID']; ?>";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <?php	}
@@ -44,6 +46,8 @@ if (!isset($fboptn['opengraph'])) {$fboptn['opengraph'] = "";}
 	$fboptn = get_option('fbcomment'); ?>
 <meta property="fb:app_id" content="<?php echo $fboptn['appID']; ?>"/>
 <meta property="fb:admins" content="<?php echo $fboptn['mods']; ?>"/>
+<meta property="og:locale" content="<?php echo $fboptn['lang']; ?>" />
+<meta property="og:locale:alternate" content="<?php echo $fboptn['lang']; ?>" />
 <?php
 }
 

@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Facebook Comments by Vivacity
 * Plugin URI: http://www.vivacityinfotech.net
-* Description: A simple Facebook Comments plugin for your site.It is a social plugin for enables Facebook users commenting on your site.
+* Description: A simple Facebook Comments plugin for your website. It`s a social plugin for enables Facebook users commenting on your website.
 * Version: 1.0.3 
 * Author: Vivacity Infotech Pvt. Ltd.
 * Author URI: http://www.vivacityinfotech.net
@@ -10,7 +10,7 @@ Text Domain: facebook-comment-by-vivacity
 Domain Path: /languages/
 */
 /*
-Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : vivacityinfotech.jaipur@gmail.com)
+Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.com)
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
     published by the Free Software Foundation.

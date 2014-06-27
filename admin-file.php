@@ -1,5 +1,4 @@
 <?php
-
 //add Jquery to settings page
 add_action( 'admin_menu', 'my_admin_plugin' );
 function my_admin_plugin() {
@@ -31,7 +30,8 @@ function fbcomment_init(){
 		'hideWpComments' => 'off',
 		'postshideWpComments' => 'off',
 		'pageshideWpComments' => 'off',
-		'selected_types' => 'selected_types'
+		'selected_types' => 'selected_types',
+		'lang' => 'en_Us'
 	);
 
 	// if old fboptn exist, update to array
@@ -94,6 +94,7 @@ if (!isset($fboptn['hideWpComments'])) {$fboptn['hideWpComments'] = "selected_ty
 if (!isset($fboptn['selected_types'])) {$fboptn['selected_types'] = "";}
 if (!isset($fboptn['postshideWpComments'])) {$fboptn['postshideWpComments'] = "";}
 if (!isset($fboptn['pageshideWpComments'])) {$fboptn['pageshideWpComments'] = "";}
+if (!isset($fboptn['lang'])) {$fboptn['lang'] = "en_Us";}
 ?>		
 <!-- get domain name -->
 <?php  $domainname = get_option('siteurl');
@@ -191,7 +192,7 @@ $domainname = str_replace('www.', '', $domainname);?>
 			</td>
 		</tr>
 		<tr><th><label for="width"><?php _e( 'Width', 'facebook-comment-by-vivacity' ); ?></label></th>
-			<td><input id="width" type="text" name="fbcomment[width]" value="<?php echo $fboptn['width']; ?>" />px <small> - <?php _e( 'Default comment box width is', 'facebook-comment-by-vivacity' ); ?> <strong>500px</strong></small>
+			<td><input id="width" type="text" name="fbcomment[width]" value="<?php echo $fboptn['width']; ?>" />px <small> - <?php _e( 'For Responsive Look use 100% as width', 'facebook-comment-by-vivacity' ); ?> <?php _e( 'Default comment box width is', 'facebook-comment-by-vivacity' ); ?> <strong>500px</strong></small>
 			</td>
 		</tr>
 		<tr><th><label for="title"><?php _e( 'Title', 'facebook-comment-by-vivacity' ); ?></label></th>
@@ -229,7 +230,7 @@ $domainname = str_replace('www.', '', $domainname);?>
 		<tr>
 		<th class="rgtth"><input type="radio"  class="mode" id="fbComments_hideWpComments" name="fbcomment[hideWpComments]" onchange="setFries()" value="on" <?php checked('on', $fboptn['hideWpComments']); ?>   /></th>
 		<td>
-		<label for="fbComments_hideWpComments"> <?php _e('Hide WordPress Default Comments System From Website'); ?></label>
+		<label for="fbComments_hideWpComments"> <?php _e('Hide WordPress Default Comments System From Website', 'facebook-comment-by-vivacity'); ?></label>
 
 		</td>
 		</tr>
@@ -239,13 +240,13 @@ $domainname = str_replace('www.', '', $domainname);?>
 <tr>
 <th class="rgtth"><input type="radio" class="mode" id="selected_types" name="fbcomment[hideWpComments]" onchange="setFries()" value="selected_types" <?php checked( 'selected_types', $fboptn['hideWpComments']); ?> /> </th>
 <td>
-<label for="selected_types"> <?php _e('Hide WordPress Default Comments System On Certain Post Types'); ?></label>
+<label for="selected_types"> <?php _e('Hide WordPress Default Comments System On Certain Post Types', 'facebook-comment-by-vivacity'); ?></label>
 </td>
 </tr>
   </table>
      <table class="form-table admintbl posts-pages">
 <!-- ------post--------- --> 		
-		<tr><th><label for="posts_hideWpComments"> <?php _e('Hide WordPress Default Comments System On Posts'); ?></label>
+		<tr><th><label for="posts_hideWpComments"> <?php _e('Hide WordPress Default Comments System On Posts', 'facebook-comment-by-vivacity'); ?></label>
 		</th>
 		<td>
 		<input type="checkbox" class="checkmode" id="posts_hideWpComments" name="fbcomment[postshideWpComments]"  value="on" <?php checked('on', $fboptn['postshideWpComments']); ?>
@@ -253,7 +254,7 @@ $domainname = str_replace('www.', '', $domainname);?>
 				</td>
 		</tr>
 <!-- ------page--------- --> 		
-		<tr><th><label for="fbComments_hideWpComments"> <?php _e('Hide WordPress Default Comments System On Pages'); ?></label>
+		<tr><th><label for="fbComments_hideWpComments"> <?php _e('Hide WordPress Default Comments System On Pages', 'facebook-comment-by-vivacity'); ?></label>
 		</th>
 		<td>
 		<input type="checkbox" class="checkmode" id="pages_hideWpComments" name="fbcomment[pageshideWpComments]"  value="on" <?php checked('on', $fboptn['pageshideWpComments']); ?>
@@ -262,6 +263,138 @@ $domainname = str_replace('www.', '', $domainname);?>
 		</tr>
   </table>
   </div>  <!-- ------End default wp comments--------- --> 
+  
+  	<h3 id="lang" class="title"><?php _e( 'Language Settings', 'facebook-comment-by-vivacity' ); ?></h3>   
+  	<!-- ------ Language--------- --> 
+	<div id="langtbl" class="togglediv">
+   <table class="form-table admintbl">
+			<tr><th><label for="Language"><?php _e( 'Select Language', 'facebook-comment-by-vivacity' ); ?></label></th>
+		<td>
+		 <?php $lang=array();
+								$lang['af_ZA']='Afrikaans';
+								$lang['sq_AL']='Albanian';
+								$lang['ar_AR']='Arabic';
+								$lang['hy_AM']='Armenian';
+								$lang['ay_BO']='Aymara';
+								$lang['az_AZ']='Azeri';
+								$lang['eu_ES']='Basque';
+								$lang['be_BY']='Belarusian';
+								$lang['bn_IN']='Bengali';
+								$lang['bs_BA']='Bosnian';
+								$lang['bg_BG']='Bulgarian';
+								$lang['ca_ES']='Catalan';
+								$lang['ck_US']='Cherokee';
+								$lang['hr_HR']='Croatian';
+								$lang['cs_CZ']='Czech';
+								$lang['da_DK']='Danish';
+								$lang['nl_NL']='Dutch';
+								$lang['nl_BE']='Dutch (Belgi?)';
+								$lang['en_GB']='English (UK)';
+								$lang['en_PI']='English (Pirate)';
+								$lang['en_UD']='English (Upside Down)';
+								$lang['en_US']='English (US)';
+								$lang['eo_EO']='Esperanto';
+								$lang['et_EE']='Estonian';
+								$lang['fo_FO']='Faroese';
+								$lang['tl_PH']='Filipino';
+								$lang['fi_FI']='Finnish';
+								$lang['fb_FI']='Finnish (test)';
+								$lang['fr_CA']='French (Canada)';
+								$lang['fr_FR']='French (France)';
+								$lang['gl_ES']='Galician';
+								$lang['ka_GE']='Georgian';
+								$lang['de_DE']='German';
+								$lang['el_GR']='Greek';
+								$lang['gn_PY']='Guaran?';
+								$lang['gu_IN']='Gujarati';
+								$lang['he_IL']='Hebrew';
+								$lang['hi_IN']='Hindi';
+								$lang['hu_HU']='Hungarian';
+								$lang['is_IS']='Icelandic';
+								$lang['id_ID']='Indonesian';
+								$lang['ga_IE']='Irish';
+								$lang['it_IT']='Italian';
+								$lang['ja_JP']='Japanese';
+								$lang['jv_ID']='Javanese';
+								$lang['kn_IN']='Kannada';
+								$lang['kk_KZ']='Kazakh';
+								$lang['km_KH']='Khmer';
+								$lang['tl_ST']='Klingon';
+								$lang['ko_KR']='Korean';
+								$lang['ku_TR']='Kurdish';
+								$lang['la_VA']='Latin';
+								$lang['lv_LV']='Latvian';
+								$lang['fb_LT']='Leet Speak';
+								$lang['li_NL']='Limburgish';
+								$lang['lt_LT']='Lithuanian';
+								$lang['mk_MK']='Macedonian';
+								$lang['mg_MG']='Malagasy';
+								$lang['ms_MY']='Malay';
+								$lang['ml_IN']='Malayalam';
+								$lang['mt_MT']='Maltese';
+								$lang['mr_IN']='Marathi';
+								$lang['mn_MN']='Mongolian';
+								$lang['ne_NP']='Nepali';
+								$lang['se_NO']='Northern S?mi';
+								$lang['nb_NO']='Norwegian (bokmal)';
+								$lang['nn_NO']='Norwegian (nynorsk)';
+								$lang['ps_AF']='Pashto';
+								$lang['fa_IR']='Persian';
+								$lang['pl_PL']='Polish';
+								$lang['pt_BR']='Portuguese (Brazil)';
+								$lang['pt_PT']='Portuguese (Portugal)';
+								$lang['pa_IN']='Punjabi';
+								$lang['qu_PE']='Quechua';
+								$lang['ro_RO']='Romanian';
+								$lang['rm_CH']='Romansh';
+								$lang['ru_RU']='Russian';
+								$lang['sa_IN']='Sanskrit';
+								$lang['sr_RS']='Serbian';
+								$lang['zh_CN']='Simplified Chinese (China)';
+								$lang['sk_SK']='Slovak';
+								$lang['sl_SI']='Slovenian';
+								$lang['so_SO']='Somali';
+								$lang['es_LA']='Spanish';
+								$lang['es_CL']='Spanish (Chile)';
+								$lang['es_CO']='Spanish (Colombia)';
+								$lang['es_MX']='Spanish (Mexico)';
+								$lang['es_ES']='Spanish (Spain)';
+								$lang['sv_SE']='Swedish';
+								$lang['sy_SY']='Syriac';
+								$lang['tg_TJ']='Tajik';
+								$lang['ta_IN']='Tamil';
+								$lang['tt_RU']='Tatar';
+								$lang['te_IN']='Telugu';
+								$lang['th_TH']='Thai';
+								$lang['zh_HK']='Traditional Chinese (Hong Kong)';
+								$lang['zh_TW']='Traditional Chinese (Taiwan)';
+								$lang['tr_TR']='Turkish';
+								$lang['uk_UA']='Ukrainian';
+								$lang['ur_PK']='Urdu';
+								$lang['uz_UZ']='Uzbek';
+								$lang['vi_VN']='Vietnamese';
+								$lang['cy_GB']='Welsh';
+								$lang['xh_ZA']='Xhosa';
+								$lang['yi_DE']='Yiddish';
+								$lang['zu_ZA']='Zulu';
+							?>
+				<select name="fbcomment[lang]">
+                 <?php
+                foreach($lang as $key=>$val)
+							{
+							   $selected='';
+								if($fboptn['lang']==$key)
+									$selected="selected";
+									echo '<option value="'.$key.'" '.$selected.' >'.$val.'</option>';
+								
+							}
+								?>
+
+                </select>
+		</td>
+		</tr>
+  </table>
+  </div>  <!-- ------End Language--------- --> 
 	
 		<div class="submitform">
 			<input type="submit" class="button1" value="<?php _e('Save Changes') ?>" />

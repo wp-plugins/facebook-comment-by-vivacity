@@ -22,6 +22,16 @@ You cab also customize setting for following features:
 * Shortcode for templates or posts/pages/home.
 * Feature for remove wordpress default comments on posts/pages.
 * Multi languages support.
+* Option for select facebook comment box language from a bunch of different languages to display facebook comment box into selected language.
+* POT file is added for plugin translation into your languages.
+= Translators =
+
+* English(US) (en_Us) - [Team Vivacity](http://vivacityinfotech.net/)
+* French (fr_FR) - [Team Vivacity](http://vivacityinfotech.net/)
+
+If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [us](http://vivacityinfotech.net/contact-us/) so that We can bundle it into this plugin.
+You can download the latest [POT file](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/trunk/languages/facebook-comment-by-vivacity.pot), and [PO files in each language](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/branches/languages/).
+
 
 = Rate Us / Feedback =
 
@@ -75,7 +85,8 @@ For Example:
 
 = 1.0.3 =
 * Multi languages support.
-* Pot file added for translate plugin in your language.
+* POT file added for translate plugin in your language.
+* Option added for select facebook comment box language from a bunch of different languages to display facebook comment box into selected language.
 
 = 1.0.2 =
 * Feature for remove wordpress default comments on posts/pages.
