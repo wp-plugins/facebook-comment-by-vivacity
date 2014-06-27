@@ -9,7 +9,7 @@ Stable tag: 1.0.3
 
 == Description ==
 
-A simple Facebook Comments plugin for your site.It is a social plugin for enables Facebook users commenting on your site.There are potions for enable Facebook comments on posts/pages/home of your site.
+A simple Facebook Comments plugin for your website.It`s a social plugin for enables Facebook users commenting on your site.There are potions for enable Facebook comments on posts/pages/home of your website.
 
 You cab also customize setting for following features:
 
