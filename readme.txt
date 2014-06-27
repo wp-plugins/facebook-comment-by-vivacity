@@ -14,23 +14,23 @@ A simple Facebook Comments plugin for your website.It`s a social plugin for enab
 You cab also customize setting for following features:
 
 
-* Hide/show facebook comments on posts/pages/home.
-* You can customize Width.
-* You can set - Color Scheme (Light or Dark)
-* HTML5 and XFBML versions of facebook comments.
-* Moderation option.
-* Shortcode for templates or posts/pages/home.
-* Feature for remove wordpress default comments on posts/pages.
-* Multi languages support.
-* Option for select facebook comment box language from a bunch of different languages to display facebook comment box into selected language.
+* Hide/show Facebook comments on posts/pages/home page.
+* You can customize Width of comment box.
+* You can choose color scheme (Light or Dark)
+* Use HTML5 or XFBML versions of Facebook comments.
+* Moderation option is also there.
+* Shortcode for templates or posts/pages/home page.
+* Feature for remove wordpress default comment form on posts/pages.
+* Multi-languages support is also available.
+* Option for select Facebook comment box language from a bunch of different languages to display Facebook comment box into your native language.
 * POT file is added for plugin translation into your languages.
 = Translators =
 
 * English(US) (en_Us) - [Team Vivacity](http://vivacityinfotech.net/)
 * French (fr_FR) - [Team Vivacity](http://vivacityinfotech.net/)
 
-If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [us](http://vivacityinfotech.net/contact-us/) so that We can bundle it into this plugin.
-You can download the latest [POT file](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/trunk/languages/facebook-comment-by-vivacity.pot), and [PO files in each language](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/branches/languages/).
+If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [Us](http://vivacityinfotech.net/contact-us/) so that We can bundle it into this plugin.
+You can download the latest [POT file](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/tags/1.0.3/languages/facebook-comment-by-vivacity.pot), and [PO files in each language](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/tags/1.0.3/languages/).
 
 
 = Rate Us / Feedback =
