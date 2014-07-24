@@ -1,0 +1,363 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the WordPress package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  Facebook Comment by Vivacity 1.0.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/facebook-comment-by-vivacity\n"
+"POT-Creation-Date: 2014-06-25 10:48:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Team Vivacity <support@vivacityinfotech.com>\n"
+"Language-Team: Team Vivacity <support@vivacityinfotech.com>\n" 
+
+#: admin-file.php:50
+msgid "FB Comments"
+msgstr ""
+
+#: admin-file.php:50 admin-file.php:59
+msgid "fbcomment"
+msgstr ""
+
+#: admin-file.php:61
+msgid "Please Enter Your Facebook App ID. Required for Fb comments."
+msgstr ""
+
+#: admin-file.php:61
+msgid "Click here"
+msgstr ""
+
+#: admin-file.php:74
+msgid "FB Comments Plugin"
+msgstr ""
+
+#: admin-file.php:74
+msgid "by"
+msgstr ""
+
+#: admin-file.php:108
+msgid "Set Up Your Facebook App ID"
+msgstr ""
+
+#: admin-file.php:112 admin-file.php:113
+msgid "Create an App"
+msgstr ""
+
+#: admin-file.php:113
+msgid "To get App Id click on"
+msgstr ""
+
+#: admin-file.php:115
+msgid "Enter App Id into below textbox."
+msgstr ""
+
+#: admin-file.php:117
+msgid "APP ID"
+msgstr ""
+
+#: admin-file.php:123
+msgid "Facebook App Setting"
+msgstr ""
+
+#: admin-file.php:127
+msgid "To edit your App ID click on below link:"
+msgstr ""
+
+#: admin-file.php:128
+msgid "Your App Setup"
+msgstr ""
+
+#: admin-file.php:129
+msgid "choose your App and click"
+msgstr ""
+
+#: admin-file.php:129
+msgid "Edit Settings"
+msgstr ""
+
+#: admin-file.php:129
+msgid "Please Enter"
+msgstr ""
+
+#: admin-file.php:129
+msgid "in both \"App Domains\" and \"Site URL\""
+msgstr ""
+
+#: admin-file.php:133 admin-file.php:135
+msgid "Create a New App"
+msgstr ""
+
+#: admin-file.php:135
+msgid "If you want to set up a new App Id click"
+msgstr ""
+
+#: admin-file.php:141
+msgid "Main Settings"
+msgstr ""
+
+#: admin-file.php:145
+msgid "Facebook App ID"
+msgstr ""
+
+#: admin-file.php:149
+msgid "Enable XFBML"
+msgstr ""
+
+#: admin-file.php:150
+msgid "only disable this if you already have XFBML enabled elsewhere"
+msgstr ""
+
+#: admin-file.php:152
+msgid "Use Facebook NameServer"
+msgstr ""
+
+#: admin-file.php:153
+msgid "only enable this if Facebook Comments do not appear"
+msgstr ""
+
+#: admin-file.php:155
+msgid "Use Open Graph NameServer"
+msgstr ""
+
+#: admin-file.php:156
+msgid ""
+"only enable this if Facebook comments are not appearing, not all information "
+"is being passed to Facebook or if you have not enabled Open Graph elsewhere "
+"within WordPress"
+msgstr ""
+
+#: admin-file.php:158
+msgid "Use HTML5"
+msgstr ""
+
+#: admin-file.php:161
+msgid "Show plugin site url"
+msgstr ""
+
+#: admin-file.php:162
+msgid "only enable this if you want to show plugin site"
+msgstr ""
+
+#: admin-file.php:167
+msgid "Display Settings"
+msgstr ""
+
+#: admin-file.php:170
+msgid "Posts"
+msgstr ""
+
+#: admin-file.php:173
+msgid "Pages"
+msgstr ""
+
+#: admin-file.php:176
+msgid "Home"
+msgstr ""
+
+#: admin-file.php:180
+msgid "Colour Scheme"
+msgstr ""
+
+#: admin-file.php:183
+msgid "Light"
+msgstr ""
+
+#: admin-file.php:184
+msgid "Dark"
+msgstr ""
+
+#: admin-file.php:188
+msgid "Number of Comments"
+msgstr ""
+
+#: admin-file.php:189
+msgid "Default no of comments is"
+msgstr ""
+
+#: admin-file.php:193
+msgid "Width"
+msgstr ""
+
+#: admin-file.php:194
+msgid "Default comment box width is"
+msgstr ""
+
+#: admin-file.php:194
+msgid "For Responsive Look use 100% as width"
+msgstr ""
+
+#: admin-file.php:197
+msgid "Title"
+msgstr ""
+
+#: admin-file.php:201
+msgid "Show Comment Count"
+msgstr ""
+
+#: admin-file.php:205
+msgid "Comment text"
+msgstr ""
+
+#: admin-file.php:212
+msgid "Moderation Settings"
+msgstr ""
+
+#: admin-file.php:215
+msgid "Moderation Area"
+msgstr ""
+
+#: admin-file.php:216
+msgid ""
+"If you are a moderator, you will see notifications within facebook.com. If "
+"you don't want to have moderator status, click on \"Moderation Area\" and "
+"use this link to left."
+msgstr ""
+
+#: admin-file.php:218
+msgid "Moderators"
+msgstr ""
+
+#: admin-file.php:219
+msgid ""
+"All admins to the App ID can moderate comments,By default. To add "
+"moderators, enter each Facebook User ID by a comma without spaces. To find "
+"your Facebook User ID"
+msgstr ""
+
+#: admin-file.php:219
+msgid "click here"
+msgstr ""
+
+#: admin-file.php:219
+msgid ""
+"where you will see your own. To view someone else's, replace \"me\" with "
+"their username in the input provided"
+msgstr ""
+
+#: admin-file.php:224
+msgid "Hide/Show default wp comments"
+msgstr ""
+
+#: admin-file.php:232
+msgid "Hide WordPress Default Comments System From Website"
+msgstr ""
+
+#: admin-file.php:242
+msgid "Hide WordPress Default Comments System On Certain Post Types"
+msgstr ""
+
+#: admin-file.php:248
+msgid "Hide WordPress Default Comments System On Posts"
+msgstr ""
+
+#: admin-file.php:256
+msgid "Hide WordPress Default Comments System On Pages"
+msgstr ""
+
+#: admin-file.php:267
+msgid "Save Changes"
+msgstr ""
+
+#: admin-file.php:275
+msgid "Shortcode For Templates"
+msgstr ""
+
+#: admin-file.php:279
+msgid "You can also insert FB Comment Box manually in any page or post or"
+msgstr ""
+
+#: admin-file.php:279
+msgid "template"
+msgstr ""
+
+#: admin-file.php:279
+msgid "by simply using the shortcode"
+msgstr ""
+
+#: admin-file.php:280
+msgid "You can insert"
+msgstr ""
+
+#: admin-file.php:280
+msgid "code into your templates for use this shortcode"
+msgstr ""
+
+#: admin-file.php:282
+msgid "You can also use below options to override the the settings used above."
+msgstr ""
+
+#: admin-file.php:284
+msgid "leave blank for current URL"
+msgstr ""
+
+#: admin-file.php:285
+msgid "minimum must be"
+msgstr ""
+
+#: admin-file.php:286
+msgid "number of comments"
+msgstr ""
+
+#: admin-file.php:287
+msgid "comment count on/off"
+msgstr ""
+
+#: admin-file.php:288
+msgid "color scheme: light/dark"
+msgstr ""
+
+#: admin-file.php:289
+msgid "enter"
+msgstr ""
+
+#: admin-file.php:289
+msgid "to link to the plugin"
+msgstr ""
+
+#: admin-file.php:291
+msgid "For Example"
+msgstr ""
+
+#: admin-file.php:299
+msgid "Download Free Plugins"
+msgstr ""
+
+#: admin-file.php:303
+msgid "has following plugins for you"
+msgstr ""
+
+#: admin-file.php:321 admin-file.php:324
+msgid "Donate Here"
+msgstr ""
+
+#: admin-file.php:323
+msgid "If you want to donate , please click on below image."
+msgstr ""
+
+#: fb-comments.php:44
+msgid "Settings"
+msgstr ""
+
+#: user-file.php:134 user-file.php:181
+msgid "Facebook Comments Plugin Powered by"
+msgstr ""
+
+#: user-file.php:141 user-file.php:188
+msgid "Please Enter Your Facebook App ID. Required for FB Comments."
+msgstr ""
+
+#: user-file.php:141 user-file.php:188
+msgid "Click here for FB Comments Settings page"
+msgstr ""
+
+#: admin-file.php:268 
+msgid "Language Settings"
+msgstr ""
+
+#: admin-file.php:272 
+msgid "Select Language"
+msgstr ""
+
+
+

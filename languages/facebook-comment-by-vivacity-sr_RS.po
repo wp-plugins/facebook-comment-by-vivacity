@@ -1,0 +1,344 @@
+# Copyright (C) 2014 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/facebook-comment-by-vivacity\n"
+"POT-Creation-Date: 2014-06-24 09:45:35+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-07-10 08:08+0100\n"
+"Last-Translator: Borisa Djuraskovic <borisad@webhostinghub.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: admin-file.php:50
+msgid "FB Comments"
+msgstr "FB komentari"
+
+#: admin-file.php:50 admin-file.php:59
+msgid "fbcomment"
+msgstr "fbkomentar"
+
+#: admin-file.php:61
+msgid "Please Enter Your Facebook App ID. Required for Fb comments."
+msgstr "Unesite vaš Facebook App ID. Potrebno za Fb komentare."
+
+#: admin-file.php:61
+msgid "Click here"
+msgstr "kLIKNITE OVDE"
+
+#: admin-file.php:74
+msgid "FB Comments Plugin"
+msgstr "FB komentari Plugin"
+
+#: admin-file.php:74
+msgid "by"
+msgstr "od strane"
+
+#: admin-file.php:74
+msgid "Vivacity Infotech Pvt. Ltd."
+msgstr "Vivacity Infotech Pvt. Ltd."
+
+#: admin-file.php:108
+msgid "Set Up Your Facebook App ID"
+msgstr "Podesite vaš Facebook App ID"
+
+#: admin-file.php:112 admin-file.php:113
+msgid "Create an App"
+msgstr "Stvorite App"
+
+#: admin-file.php:113
+msgid "To get App Id click on"
+msgstr "Da biste dobili App Id kliknite na"
+
+#: admin-file.php:115
+msgid "Enter App Id into below textbox."
+msgstr "Unesite App Id u tekst ispod"
+
+#: admin-file.php:117
+msgid "APP ID"
+msgstr "APP ID"
+
+#: admin-file.php:123
+msgid "Facebook App Setting"
+msgstr "Facebook App postavka"
+
+#: admin-file.php:127
+msgid "To edit your App ID click on below link:"
+msgstr "Da biste editovali App ID kliknite na link ispod:"
+
+#: admin-file.php:128
+msgid "Your App Setup"
+msgstr "Vaš pristup app"
+
+#: admin-file.php:129
+msgid "choose your App and click"
+msgstr "izaberite vašu App i kliknite"
+
+#: admin-file.php:129
+msgid "Edit Settings"
+msgstr "Edituj postavke"
+
+#: admin-file.php:129
+msgid "Please Enter"
+msgstr "Unesite"
+
+#: admin-file.php:129
+msgid "in both \"App Domains\" and \"Site URL\""
+msgstr "u oba  \"App Domains\" i \"Site URL\""
+
+#: admin-file.php:133 admin-file.php:135
+msgid "Create a New App"
+msgstr "Kreirajte novu app"
+
+#: admin-file.php:135
+msgid "If you want to set up a new App Id click"
+msgstr "Ako želite da podesite novi App Id klik"
+
+#: admin-file.php:141
+msgid "Message Id"
+msgstr "Id poruke"
+
+#: admin-file.php:145
+msgid "Facebook App ID"
+msgstr "Facebook App ID"
+
+#: admin-file.php:149
+msgid "Enable XFBML"
+msgstr "Omogući XFBML"
+
+#: admin-file.php:150
+msgid "only disable this if you already have XFBML enabled elsewhere"
+msgstr "onemogući samo ako već imate XFBML omogućeno negde drugde"
+
+#: admin-file.php:152
+msgid "Use Facebook NameServer"
+msgstr "Koristite Facebook NameServer"
+
+#: admin-file.php:153
+msgid "only enable this if Facebook Comments do not appear"
+msgstr "omogućiti samo ako se Facebook komentari ne pojave"
+
+#: admin-file.php:155
+msgid "Use Open Graph NameServer"
+msgstr "Koristit Open Graph NameServer"
+
+#: admin-file.php:156
+msgid ""
+"only enable this if Facebook comments are not appearing, not all information "
+"is being passed to Facebook or if you have not enabled Open Graph elsewhere "
+"within WordPress"
+msgstr ""
+"omogućiti samo ako se Facebook komentari ne pojavljuju,sve info se ne "
+"prenose na Facebook ili niste omogućili Open Graph negde drugde unutar "
+"WordPress-a"
+
+#: admin-file.php:158
+msgid "Use HTML5"
+msgstr "Koristi  HTML5"
+
+#: admin-file.php:161
+msgid "Show plugin site url"
+msgstr "Prikazati url sajta plugina"
+
+#: admin-file.php:162
+msgid "only enable this if you want to show plugin site"
+msgstr "omogućiti samo ako želite da se prikaže sajt plugina"
+
+#: admin-file.php:167
+msgid "Display Settings"
+msgstr "Prikazati postavke"
+
+#: admin-file.php:170
+msgid "Posts"
+msgstr "Postovi"
+
+#: admin-file.php:173
+msgid "Pages"
+msgstr "Stranice"
+
+#: admin-file.php:176
+msgid "Home"
+msgstr "Početna stranica"
+
+#: admin-file.php:180
+msgid "Colour Scheme"
+msgstr "Boja šeme"
+
+#: admin-file.php:183
+msgid "Light"
+msgstr "Svetlo"
+
+#: admin-file.php:184
+msgid "Dark"
+msgstr "Tamno"
+
+#: admin-file.php:188
+msgid "Number of Comments"
+msgstr "Broj komentara"
+
+#: admin-file.php:189
+msgid "Default no of comments is"
+msgstr "Default broj komentara je"
+
+#: admin-file.php:193
+msgid "Width"
+msgstr "Širina"
+
+#: admin-file.php:194
+msgid "Default comment box width is"
+msgstr "Default širina kvadrata z akomentare je"
+
+#: admin-file.php:197
+msgid "Title"
+msgstr "Naslov"
+
+#: admin-file.php:201
+msgid "Show Comment Count"
+msgstr "Prikazati broač komentara"
+
+#: admin-file.php:205
+msgid "Comment text"
+msgstr "Tekst komentara"
+
+#: admin-file.php:212
+msgid "Moderation Settings"
+msgstr "Moderacija postavki"
+
+#: admin-file.php:215
+msgid "Moderation Area"
+msgstr "Područje moderacije"
+
+#: admin-file.php:216
+msgid ""
+"If you are a moderator, you will see notifications within facebook.com. If "
+"you don't want to have moderator status, click on \"Moderation Area\" and "
+"use this link to left."
+msgstr ""
+"Ako set moderator, videćete notifikacije unutar  facebook.com. ko nemate "
+"status moderatora, kliknite na \"Moderation Area\" i koristite link levo. "
+
+#: admin-file.php:218
+msgid "Moderators"
+msgstr "Moderatori"
+
+#: admin-file.php:219
+msgid ""
+"All admins to the App ID can moderate comments,By default. To add "
+"moderators, enter each Facebook User ID by a comma without spaces. To find "
+"your Facebook User ID"
+msgstr ""
+"Svi admini u App ID mogu da srede komentare po defaultu. Da biste dodali "
+"moderatore unesite za svaki Facebook User ID zarez bez razmak. Da biste "
+"našli Facebook User ID"
+
+#: admin-file.php:219
+msgid "click here"
+msgstr "kliknite ovde"
+
+#: admin-file.php:219
+msgid ""
+"where you will see your own. To view someone else's, replace \"me\" with "
+"their username in the input provided"
+msgstr ""
+"gde ćete videti vaše. Da biste videli nečiji drugi zamenite \"ja\" sa "
+"korisničkim imnom u inputu"
+
+#: admin-file.php:224
+msgid "Hide/Show default wp comments"
+msgstr "Sakrij/Prikaži default wp komentare"
+
+#: admin-file.php:232
+msgid "Hide WordPress Default Comments System From Website"
+msgstr "Sakriti WordPress Default Comments System sa sajta"
+
+#: admin-file.php:242
+msgid "Hide WordPress Default Comments System On Certain Post Types"
+msgstr "Sakriti WordPress Default Comments System na odredjenim tipovima posta"
+
+#: admin-file.php:248
+msgid "Hide WordPress Default Comments System On Posts"
+msgstr "Sakriti WordPress Default Comments System na postovima"
+
+#: admin-file.php:256
+msgid "Hide WordPress Default Comments System On Pages"
+msgstr "sakri ti WordPress Default Comments System na stranicama"
+
+#: admin-file.php:267
+msgid "Save Changes"
+msgstr "Sačuvati promene"
+
+#: admin-file.php:275
+msgid "Shortcode For Templates"
+msgstr "Shortcode za Templates"
+
+#: admin-file.php:279
+msgid "You can also insert FB Comment Box manually in any page or post or"
+msgstr "Možete da unesete FB Comment Box ručno u bilo koju stranicu ili post"
+
+#: admin-file.php:279
+msgid "template"
+msgstr "template"
+
+#: admin-file.php:279
+msgid "by simply using the shortcode"
+msgstr "jednostavno korišćenjem shortcode"
+
+#: admin-file.php:280
+msgid "You can insert"
+msgstr "Možete da unesete"
+
+#: admin-file.php:280
+msgid "code into your templates for use this shortcode"
+msgstr "kod u vaše template da biste koristili ovaj shortcode"
+
+#: admin-file.php:282
+msgid "You can also use below options to override the the settings used above."
+msgstr ""
+"Možete takodje da koristite opcije da prepišete postavke korišćene iznad."
+
+#: admin-file.php:284
+msgid "leave blank for current URL"
+msgstr "ostaviti prazno za trenutni URL"
+
+#: admin-file.php:285
+msgid "minimum must be"
+msgstr "minimum mora biti"
+
+#: admin-file.php:286
+msgid "number of comments"
+msgstr "beoj komentara"
+
+#: admin-file.php:287
+msgid "comment count on/off"
+msgstr "brojanje komentara upaljeno/ugašeno"
+
+#: admin-file.php:288
+msgid "color scheme: light/dark"
+msgstr "boja teme: svetlo/tamno"
+
+#: admin-file.php:289
+msgid "enter"
+msgstr "uneti"
+
+#: admin-file.php:289
+msgid "to link to the plugin"
+msgstr "link za plugin"
+
+#: admin-file.php:291
+msgid "For Example"
+msgstr "npr"
+
+#: fb-comments.php:46
+msgid "Settings"
+msgstr "Postavke"
+
+#: user-file.php:141 user-file.php:188
+msgid "Please Enter Your Facebook App ID. Required for FB Comments."
+msgstr "Unesite vaš Facebook App ID. Potrebno za FB Comments."
+
+#: user-file.php:141 user-file.php:188
+msgid "Click here for FB Comments Settings page"
+msgstr "Kliko ovde za FB komentari postavje stranicu "
