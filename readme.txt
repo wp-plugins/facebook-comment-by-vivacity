@@ -5,7 +5,7 @@ Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Op
 License: GPLv2 or later
 Requires at least:3.0
 Tested up to:3.9
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 == Description ==
 
@@ -28,6 +28,9 @@ You cab also customize setting for following features:
 
 * English(US) (en_Us) - [Team Vivacity](http://vivacityinfotech.net/)
 * French (fr_FR) - [Team Vivacity](http://vivacityinfotech.net/)
+* Serbian (sr_RS) - [Ogi Djuraskovic](http://firstsiteguide.com/)
+* Spain - Spanish (es-ES) - [Ogi Djuraskovic](http://firstsiteguide.com/)
+
 
 If you have created your own language pack, or have an update of an existing one, you can send [gettext PO and MO files](http://codex.wordpress.org/Translating_WordPress) to [Us](http://vivacityinfotech.net/contact-us/) so that We can bundle it into this plugin.
 You can download the latest [POT file](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/tags/1.0.3/languages/facebook-comment-by-vivacity.pot), and [PO files in each language](http://plugins.svn.wordpress.org/facebook-comment-by-vivacity/tags/1.0.3/languages/).
@@ -82,6 +85,9 @@ For Example:
 4. Displaying Facebook Comments on page.
 
 == Changelog ==
+
+= 1.0.4 =
+* Added new po/mo file for Serbian(sr_RS) and Spain-Spanish (es-ES) language support.
 
 = 1.0.3 =
 * Multi languages support.
