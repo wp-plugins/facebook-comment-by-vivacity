@@ -3,7 +3,7 @@
 * Plugin Name: Facebook Comments by Vivacity
 * Plugin URI: http://www.vivacityinfotech.net
 * Description: A simple Facebook Comments plugin for your blog that enables FB User`s to comment on your blog or website.
-* Version: 1.0.4
+* Version: 1.0.5
 * Author: Vivacity Infotech Pvt. Ltd.
 * Author URI: http://www.vivacityinfotech.net
 Text Domain: facebook-comment-by-vivacity
