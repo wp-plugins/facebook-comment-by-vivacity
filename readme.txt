@@ -5,7 +5,7 @@ Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Op
 License: GPLv2 or later
 Requires at least:3.0
 Tested up to:3.9
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 
 == Description ==
 
@@ -85,6 +85,10 @@ For Example:
 4. Displaying Facebook Comments on page.
 
 == Changelog ==
+
+= 1.0.5 =
+* Added CSS classes to titles.
+* Included new upgraded script for Facebook Comments.
 
 = 1.0.4 =
 * Added new po/mo file for Serbian(sr_RS) and Spain-Spanish (es-ES) language support.
