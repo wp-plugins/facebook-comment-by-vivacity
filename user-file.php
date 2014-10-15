@@ -12,15 +12,17 @@ global $fboptn;
 // ---code from facebook comment code generator
 function fbmlsetting() {
 	$fboptn = get_option('fbcomment');
+	
+	
 if (!isset($fboptn['fbml'])) {$fboptn['fbml'] = "";}
 if ($fboptn['fbml'] == 'on') {
-?>
+	?>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_IN/all.js#xfbml=1&appId=<?php echo $fboptn['appID']; ?>";
+  js.src = "//connect.facebook.net/<?php echo $fboptn['lang']; ?>/sdk.js#xfbml=1&appId=<?php echo $fboptn['appID']; ?>&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 <?php	}
@@ -44,6 +46,8 @@ if (!isset($fboptn['opengraph'])) {$fboptn['opengraph'] = "";}
 	$fboptn = get_option('fbcomment'); ?>
 <meta property="fb:app_id" content="<?php echo $fboptn['appID']; ?>"/>
 <meta property="fb:admins" content="<?php echo $fboptn['mods']; ?>"/>
+<meta property="og:locale" content="<?php echo $fboptn['lang']; ?>" />
+<meta property="og:locale:alternate" content="<?php echo $fboptn['lang']; ?>" />
 <?php
 }
 
@@ -108,7 +112,7 @@ if (!isset($fboptn['countmsg'])) {$fboptn['countmsg'] = "0";}
 if($fboptn['appID'] != "") {
 		if ($fboptn['count'] == 'on') {
 			
-			 $commentcount = "<p>";
+			 $commentcount = "<p class='commentcount'>";
 			 $commentcount .= "<fb:comments-count href=\"".get_permalink()."\"></fb:comments-count>"." ".$fboptn['countmsg']."</p>";
 			 ?>
 	
@@ -116,7 +120,7 @@ if($fboptn['appID'] != "") {
 		}
 		if ($fboptn['title'] != '') {
 			
-				$commenttitle = "<h3>";
+				$commenttitle = "<h3 class='coments-title'>";
 			$commenttitle .= $fboptn['title']."</h3>";
 		}
 		$content .= "<!-- FB Comments For Wp: http://www.vivacityinfotech.com -->".$commenttitle.$commentcount;
@@ -131,15 +135,15 @@ if($fboptn['appID'] != "") {
 
     if (!empty($fboptn['pluginsite'])) {
     	if($fboptn['pluginsite'] == 'on'){
-      $content .= '<p>FB Comments Powered by <a href="http://www.vivacityinfotech.com"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
+      $content .= '<p class="pluginsite">'.__( 'Facebook Comments Plugin Powered by', 'facebook-comment-by-vivacity' ). '<a href="http://www.vivacityinfotech.net"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
 	}}
     
     }
 else {
 	$fb_adminUrl = get_admin_url()."options-general.php?page=fbcomment";
    $content .= '<div class="error" style="color:#FF0000; font-weight:bold;">
-            <p>Please Enter Your Facebook App ID. Required for FB Comments. <a href="'.$fb_adminUrl.'">Click here for FB Comments page
-            </a></p>
+            <p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comment-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comment-by-vivacity' )
+            .'</a></p>
             </div>';
    }
   }
@@ -160,7 +164,7 @@ function commentshortcode($fbsrt) {
 	if($fbsrtcode['appID'] != "") {
 		if ($fbsrtcode['count'] == 'on') {
 			
-			$commentcount = "<p>";
+			$commentcount = "<p class='commentcount'>";
 			$commentcount .= "<fb:comments-count href=".$url."></fb:comments-count> ".$fbsrtcode['countmsg']."</p>";
 		}
 		if ($fbsrtcode['title'] != '') {
@@ -178,20 +182,17 @@ function commentshortcode($fbsrt) {
 
 	if (!empty($fbsrtcode['pluginsite'])) {
 		if($fbsrtcode['pluginsite'] == 'on'){
-      $contentshortcode .= '<p>FB Comments Powered by <a href="http://www.vivacityinfotech.com"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
+      $contentshortcode .= '<p class="pluginsite">'.__( 'Facebook Comments Plugin Powered by', 'facebook-comment-by-vivacity' ). '<a href="http://www.vivacityinfotech.net"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
 	}}
 	
 	}
 	else {
        $fb_adminUrl = get_admin_url()."options-general.php?page=fbcomment";
    $contentshortcode .= '<div class="error" style="color:red; font-weight:bold;">
-            <p>Please Enter Your Facebook App ID. Required for FB Comments. <a href="'.$fb_adminUrl.'">Click here for FB Comments page</a></p>
+            <p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comment-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comment-by-vivacity' )
+            .'</a></p>
             </div>';
         }
   return $contentshortcode;
 }
-
 ?>
- 
- 
- 
