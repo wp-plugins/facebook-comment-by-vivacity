@@ -4,7 +4,7 @@ Donate link: http://bit.ly/1icl56K
 Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Open Graph, Opengraph, Protocol , XFBML , HTML5 , Moderation , Moderator, shortcode , template , template shortcode , WP comments , WP default comments.
 License: GPLv2 or later
 Requires at least:3.0
-Tested up to:3.9
+Tested up to:4.0
 Stable tag: 1.0.5
 
 == Description ==
