@@ -5,11 +5,11 @@ Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Op
 License: GPLv2 or later
 Requires at least:3.0
 Tested up to:4.0
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 
 == Description ==
 
-A simple Facebook Comments plugin for your website.It`s a social plugin for enables Facebook users commenting on your site.There are potions for enable Facebook comments on posts/pages/home of your website.
+A simple Facebook Comments plugin for your website.It`s a social plugin for enables Facebook users commenting on your site.There are options for enable Facebook comments on posts/pages/home and also you can control accessibility of it on pages of your website.
 
 You cab also customize setting for following features:
 
@@ -19,6 +19,7 @@ You cab also customize setting for following features:
 * You can choose color scheme (Light or Dark)
 * Use HTML5 or XFBML versions of Facebook comments.
 * Moderation option is also there.
+* You can control accessbilty of comment box on pages.
 * Shortcode for templates or posts/pages/home page.
 * Feature for remove wordpress default comment form on posts/pages.
 * Multi-languages support is also available.
@@ -85,6 +86,10 @@ For Example:
 4. Displaying Facebook Comments on page.
 
 == Changelog ==
+
+= 1.0.6 =
+* Now you can control accessbility of facebook comment box on pages by providing page id's.
+
 
 = 1.0.5 =
 * Added CSS classes to titles.
