@@ -17,6 +17,7 @@ function fbcomment_init(){
 		'html5' => 'on',
 		'posts' => 'on',
 		'pages' => 'off',
+		'pagesid' => 00,
 		'homepage' => 'off',
 		'appID' => '',
 		'mods' => '',
@@ -95,6 +96,7 @@ if (!isset($fboptn['selected_types'])) {$fboptn['selected_types'] = "";}
 if (!isset($fboptn['postshideWpComments'])) {$fboptn['postshideWpComments'] = "";}
 if (!isset($fboptn['pageshideWpComments'])) {$fboptn['pageshideWpComments'] = "";}
 if (!isset($fboptn['lang'])) {$fboptn['lang'] = "en_Us";}
+if (!is_numeric($fboptn['pagesid'])) {$fboptn['pagesid'] = 00;}
 ?>		
 <!-- get domain name -->
 <?php  $domainname = get_option('siteurl');
@@ -169,10 +171,13 @@ $domainname = str_replace('www.', '', $domainname);?>
 	<div id="displaysettingstbl" class="togglediv">
 	 <table class="form-table admintbl">
 		<tr><th><label for="posts"><?php _e( 'Posts', 'facebook-comment-by-vivacity' ); ?></label></th>
-		<td><input id="posts" name="fbcomment[posts]" type="checkbox" value="on" <?php checked('on', $fboptn['posts']); ?> /></td>
+		<td><input id="posts" name="fbcomment[posts]" type="checkbox" value="on" <?php checked('on', $fboptn['posts']); ?> /> </td>
 		</tr>
 		<tr><th><label for="pages"><?php _e( 'Pages', 'facebook-comment-by-vivacity' ); ?></label></th>
-		<td><input id="pages" name="fbcomment[pages]" type="checkbox" value="on" <?php checked('on', $fboptn['pages']); ?> /></td>
+		<td><input id="pages" name="fbcomment[pages]" type="checkbox" value="on" <?php checked('on', $fboptn['pages']); ?> />
+			<span><input id="pageid" name="fbcomment[pagesid]" type="text"  value="<?php  echo $fboptn['pagesid']; ?>"  /> 
+			<small><?php _e( "Enter page id's where you dont want to show FB comments (Ex:-73,37)." ); ?></small> </span>		
+		</td>
 		</tr>
 		<tr><th><label for="homepage"><?php _e( 'Home', 'facebook-comment-by-vivacity' ); ?></label></th>
 		<td><input id="home" name="fbcomment[homepage]" type="checkbox" value="on" <?php checked('on', $fboptn['homepage']); ?> />

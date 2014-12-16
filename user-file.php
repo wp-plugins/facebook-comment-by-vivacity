@@ -97,7 +97,13 @@ if (!isset($fboptn['hideWpComments'])) {$fboptn['hideWpComments'] = "";}
 // Comments 
 function commentscode($content) {
 $fboptn = get_option('fbcomment');
-		
+$pages = $fboptn['pagesid'];
+$totalpages = explode(",",$pages);
+ $allpage=get_all_page_ids();
+// print_r($allpage);
+ $allpage=array_diff($allpage,$totalpages);
+ //print_r($allpage);
+//print_r($totalpages);
 if (!isset($fboptn['html5'])) {$fboptn['html5'] = "off";}
 if (!isset($fboptn['pluginsite'])) {$fboptn['pluginsite'] = "off";}
 if (!isset($fboptn['posts'])) {$fboptn['posts'] = "off";}
@@ -107,7 +113,7 @@ if (!isset($fboptn['count'])) {$fboptn['count'] = "off";}
 if (!isset($fboptn['countmsg'])) {$fboptn['countmsg'] = "0";}
 	if (
 	   (is_single() && $fboptn['posts'] == 'on') ||
-       (is_page() && $fboptn['pages'] == 'on') ||
+       (is_page($allpage) && $fboptn['pages'] == 'on') ||
        ((is_home() || is_front_page()) && $fboptn['homepage'] == 'on')) {
 if($fboptn['appID'] != "") {
 		if ($fboptn['count'] == 'on') {
