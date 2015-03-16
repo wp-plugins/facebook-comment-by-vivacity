@@ -26,4 +26,5 @@ h3.setup {font-size: 18px;}
 #downloadtbl-comments {text-align: left;}
 #downloadtbl-comments a {font-size: 13px;}
 .admintbl tr th.rgtth {text-align: left;width: 50px;}
+.sub-tbl {float: left !important; max-width:50%;width: 48%;}
 
