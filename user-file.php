@@ -1,11 +1,32 @@
 <?php
 add_action('wp_head', 'fbopengraph');
+add_action('wp_footer', 'fbmlsetting');
 add_filter ('the_content', 'commentscode', 100);
-add_filter ('the_excerpt', 'commentscode');
+add_filter ('the_excerpt', 'commentscode', 100);
 add_filter('language_attributes', 'fbcomment_schema');
 //add_filter('widget_text', 'do_shortcode');
 add_shortcode('vivafbcomment', 'commentshortcode');
 global $fboptn;
+
+// ---code from facebook comment code generator
+function fbmlsetting() {
+	$fboptn = get_option('fbcomment');
+	
+	
+if (!isset($fboptn['fbml'])) {$fboptn['fbml'] = "";}
+if ($fboptn['fbml'] == 'on') {
+	?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/<?php echo $fboptn['lang']; ?>/sdk.js#xfbml=1&appId=<?php echo $fboptn['appID']; ?>&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<?php	}
+} 
+// ---End code from facebook comment code generator
 
 // ----Code for Adding XFBML 
 function fbcomment_schema($attr) {
@@ -46,33 +67,6 @@ function fviva_scripts_load()
 	$width = $fboptn['width'];
 	$colorscheme = $fboptn['scheme'];
 	$lang_region = $fboptn['lang'];
-
-	# NOTE: This block may need to deregister additional scripts 
-	#  if other plugins load the facebook sdk under another handle.
-	#  These will all use the global var FB and may conflict.
-      wp_deregister_script( 'facebook-sdk' );
-		wp_deregister_script( 'facebook-jssdk' );
-		wp_deregister_script( 'facebook' );
-
-   $fbsdk = 'http://connect.facebook.net/'.$lang_region.'/all.js#xfbml=1';
-
-	if ( $app_id ) 
-	{
-		$fbsdk .= '&appId='. $app_id;
-	}
-	
-	// check for admin user id
-	if ( $admin_user_id ) 
-	{
-		add_action('wp_head', 'fviva_fbadmin_wp_head');
-		function fviva_fbadmin_wp_head(){
-			global $admin_user_id;
-			echo '<meta property="fb:admins" content="{' . $admin_user_id . '}"/> <!-- Facebook Admin ID -->' . PHP_EOL;
-		}
-	}	
-	
-	wp_register_script( 'facebook-sdk', $fbsdk, array('jquery') );
-	wp_enqueue_script( 'facebook-sdk' );
 
 	wp_deregister_script( 'fviva-scripts' );
 

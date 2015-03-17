@@ -7,7 +7,6 @@ function fviva_log( s ) {
 
 // load widget
 jQuery(document).ready(function($) {
-
 	// get page id
 	var url; 
 	if ( fviva_global_data.permalink ) {
@@ -53,7 +52,6 @@ jQuery(document).ready(function($) {
 					}
 				}
 			});   
-   
                 
             });   
 });

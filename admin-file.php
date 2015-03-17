@@ -80,13 +80,6 @@ function fbcomments_msg(){
 }
 add_action('admin_notices', 'fbcomments_msg');
 
-
-
-
-
-
-
-
 // Admin Settings
 function fbcomment_option() {	?>
 	<link href="<?php echo plugins_url( 'css/style.css' , __FILE__ ); ?>" rel="stylesheet" type="text/css">
@@ -270,7 +263,7 @@ function fbcomment_option() {	?>
    										'public'   => true,
    										'_builtin' => false
 										);
-										$output = 'names'; // names or objects, note names is the default
+										$output = 'objects'; // names or objects, note names is the default
 										$operator = 'and'; // 'and' or 'or'
 										$post_types = get_post_types( $args, $output, $operator ); 
 											$i=0;
@@ -280,15 +273,10 @@ function fbcomment_option() {	?>
 ?>
 												<div class="sub-tbl" >
 													<p class="sub-tbl-p">
-													<input id="fbcomment[<?php echo $post_type; ?>]" class="post-type" name="fbcomment[<?php echo $post_type; ?>]" type="checkbox" value="<?php echo $post_type; ?>" <?php if($fboptn['posttypes']==""){ echo $disabled;} ?> <?php checked($post_type, $fboptn[$post_type]); ?>/><label for="homepage"><?php echo $post_type; ?></label>
+													<input id="fbcomment[<?php echo $post_type->name; ?>]" class="post-type" name="fbcomment[<?php echo $post_type->name; ?>]" type="checkbox" value="<?php echo $post_type->name; ?>" <?php if($fboptn['posttypes']==""){ echo $disabled;} ?> <?php checked($post_type->name, $fboptn[$post_type->name]); ?>/><label for="homepage"><?php echo $post_type->labels->name; ?></label>
 													</p>
 												</div>
-<?php
-												$i;
-												if($i==3){ 	//echo "<br>";		 	
-												} 
-											} 
-?>	
+<?php	} ?>	
 									</div>
 								</td>
 							</tr>

@@ -5,7 +5,7 @@ Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Op
 License: GPLv2 or later
 Requires at least:3.0
 Tested up to:4.1.1
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 
 == Description ==
 
@@ -97,6 +97,9 @@ Admin will be notified via email if there is new comment on admin's website. For
 4. Displaying Facebook Comments on page.
 
 == Changelog ==
+
+= 1.0.8 =
+* Included missing JS script.
 
 = 1.0.7 =
 * New Admin email notification feature, admin will be notified via email if there is new comment on admin's website.
