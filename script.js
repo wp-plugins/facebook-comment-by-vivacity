@@ -20,8 +20,11 @@ jQuery(document).ready(function($){
         height:'toggle'
       });
   });
- 
+  
+
+  
 });
+
 
 function setFries(){
     var el = document.getElementById("fbComments_hideWpComments");
@@ -38,19 +41,7 @@ function setFries(){
      	document.getElementById("posts_hideWpComments").disabled = true;
       document.getElementById("pages_hideWpComments").disabled = true;
      	}
-    }
-  
- function setPostypeFries(){ 
-       var pt = document.getElementById("posttypes");	
- var inputElements = document.getElementsByClassName('post-type');
-for(var i=0; inputElements[i]; ++i){
-      if(pt.checked){
-          inputElements[i].disabled = false;
-           }
-     	else {
-          	inputElements[i].disabled = true;
-      	}
-}
-}
+  }
+
 
 	
