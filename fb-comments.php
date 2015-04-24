@@ -6,6 +6,7 @@
 * Version: 1.0.9
 * Author: Vivacity Infotech Pvt. Ltd.
 * Author URI: http://www.vivacityinfotech.net
+* Author Email: support@vivacityinfotech.net
 Text Domain: facebook-comment-by-vivacity
 Domain Path: /languages/
 */
