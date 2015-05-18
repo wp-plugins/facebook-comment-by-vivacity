@@ -4,8 +4,8 @@ Donate link: http://bit.ly/1icl56K
 Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Open Graph, Opengraph, Protocol , XFBML , HTML5 , Moderation , Moderator, shortcode , template , template shortcode , WP comments , WP default comments.
 License: GPLv2 or later
 Requires at least:3.0
-Tested up to: 4.2
-Stable tag: 1.0.9
+Tested up to: 4.2.2
+Stable tag: 1.1.0
 
 == Description ==
 
@@ -25,6 +25,7 @@ You cab also customize setting for following features:
 * Multi-languages support is also available.
 * Option for select Facebook comment box language from a bunch of different languages to display Facebook comment box into your native language.
 * POT file is added for plugin translation into your languages.
+* Added option for enable /disable FB comment-box from CPTs
 = Translators =
 
 * English(US) (en_Us) - [Team Vivacity](http://vivacityinfotech.net/)
@@ -86,6 +87,9 @@ For Example:
 4. Displaying Facebook Comments on page.
 
 == Changelog ==
+
+= 1.1.0 =
+* Added option for enable /disable FB comment-box from CPTs.
 
 = 1.0.9 =
 * Rolled back to 1.0.6 version due to having bugs in new version.

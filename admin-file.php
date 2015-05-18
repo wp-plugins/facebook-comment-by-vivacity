@@ -19,6 +19,8 @@ function fbcomment_init(){
 		'pages' => 'off',
 		'pagesid' => 00,
 		'homepage' => 'off',
+		'archive' => 'off',
+		'posttypes' => 'off',
 		'appID' => '',
 		'mods' => '',
 		'num' => '6',
@@ -97,6 +99,21 @@ if (!isset($fboptn['postshideWpComments'])) {$fboptn['postshideWpComments'] = ""
 if (!isset($fboptn['pageshideWpComments'])) {$fboptn['pageshideWpComments'] = "";}
 if (!isset($fboptn['lang'])) {$fboptn['lang'] = "en_Us";}
 if (!is_numeric($fboptn['pagesid'])) {$fboptn['pagesid'] = 00;}
+if (!isset($fboptn['archive'])) {$fboptn['archive'] = "";}
+if (!isset($fboptn['posttypes'])) {$fboptn['posttypes'] = "";} 
+
+
+$args = array(
+   					'public'   => true,
+   					'_builtin' => false
+					);
+					$output = 'names'; // names or objects, note names is the default
+					$operator = 'and'; // 'and' or 'or'
+					$post_types = get_post_types( $args, $output, $operator ); 
+						foreach ( $post_types  as $post_type ) {
+							if (!isset($fboptn[$post_type])) {$fboptn[$post_type] = "";}
+						}
+
 ?>		
 <!-- get domain name -->
 <?php  $domainname = get_option('siteurl');
@@ -183,6 +200,43 @@ $domainname = str_replace('www.', '', $domainname);?>
 		<td><input id="home" name="fbcomment[homepage]" type="checkbox" value="on" <?php checked('on', $fboptn['homepage']); ?> />
 		</td>
 		</tr>
+		<tr>
+								<th><label for="archive"><?php _e( 'Archive', 'facebook-comment-by-vivacity' ); ?></label></th>
+								<td><input id="archive" name="fbcomment[archive]" type="checkbox" value="on" <?php checked('on', $fboptn['archive']); ?> />
+								</td>
+		</tr>
+		
+	<!-- ------Start Post type Settings--------- -->		
+							<tr>
+								<th><label for="posttypes"><?php _e( 'Post types', 'facebook-comment-by-vivacity' ); ?></label></th>
+								<td><input id="posttypes" name="fbcomment[posttypes]" type="checkbox" onchange="setPostypeFries()" value="on" <?php checked('on', $fboptn['posttypes']); ?> /><br>
+									<div class="postype-list">
+<?php
+										$args = array(
+   										'public'   => true,
+   										'_builtin' => false
+										);
+										$output = 'objects'; // names or objects, note names is the default
+										$operator = 'and'; // 'and' or 'or'
+										$post_types = get_post_types( $args, $output, $operator ); 
+											$i=0;
+											foreach ( $post_types  as $post_type ) {
+												$i++;
+												$disabled = 'disabled=""';
+?>
+												<div class="sub-tbl" >
+													<p class="sub-tbl-p">
+													<input id="fbcomment[<?php echo $post_type->name; ?>]" class="post-type" name="fbcomment[<?php echo $post_type->name; ?>]" type="checkbox" value="<?php echo $post_type->name; ?>" <?php if($fboptn['posttypes']==""){ echo $disabled;} ?> <?php checked($post_type->name, $fboptn[$post_type->name]); ?>/><label for="homepage"><?php echo $post_type->labels->name; ?></label>
+													</p>
+												</div>
+<?php	} ?>	
+									</div>
+								</td>
+							</tr>
+<!-- ------End Post type Settings--------- -->		
+		
+		
+		
 		<tr><th><label for="scheme"><?php _e( 'Colour Scheme', 'facebook-comment-by-vivacity' ); ?></label></th>
 		<td>
 				<select name="fbcomment[scheme]">

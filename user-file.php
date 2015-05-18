@@ -97,13 +97,6 @@ if (!isset($fboptn['hideWpComments'])) {$fboptn['hideWpComments'] = "";}
 // Comments 
 function commentscode($content) {
 $fboptn = get_option('fbcomment');
-$pages = $fboptn['pagesid'];
-$totalpages = explode(",",$pages);
- $allpage=get_all_page_ids();
-// print_r($allpage);
- $allpage=array_diff($allpage,$totalpages);
- //print_r($allpage);
-//print_r($totalpages);
 if (!isset($fboptn['html5'])) {$fboptn['html5'] = "off";}
 if (!isset($fboptn['pluginsite'])) {$fboptn['pluginsite'] = "off";}
 if (!isset($fboptn['posts'])) {$fboptn['posts'] = "off";}
@@ -111,49 +104,169 @@ if (!isset($fboptn['pages'])) {$fboptn['pages'] = "off";}
 if (!isset($fboptn['homepage'])) {$fboptn['homepage'] = "off";}
 if (!isset($fboptn['count'])) {$fboptn['count'] = "off";}
 if (!isset($fboptn['countmsg'])) {$fboptn['countmsg'] = "0";}
-	if (
-	   (is_single() && $fboptn['posts'] == 'on') ||
-       (is_page($allpage) && $fboptn['pages'] == 'on') ||
-       ((is_home() || is_front_page()) && $fboptn['homepage'] == 'on')) {
-if($fboptn['appID'] != "") {
-		if ($fboptn['count'] == 'on') {
-			
-			 $commentcount = "<p class='commentcount'>";
-			 $commentcount .= "<fb:comments-count href=\"".get_permalink()."\"></fb:comments-count>"." ".$fboptn['countmsg']."</p>";
-			 ?>
+	if (!isset($fboptn['archive'])) {$fboptn['archive'] = "";}
+	if (!isset($fboptn['posttypes'])) {$fboptn['posttypes'] = "off";}
+	if (!isset($fboptn['pagesid'])) {$fboptn['pagesid'] = 00;}
+	$posttype = get_post_type();
+  	$pages = $fboptn['pagesid'];
+     $pages1 = explode(',', $pages);
+		if(!empty($pages)){
+			foreach($pages1 as $page) {
+				if(is_page($page) && $fboptn['pages'] == 'on' ){		
+	 	 			return $content;  	//return blank for exclude page ids
+	 			}
+	 			if(is_single($page) && $fboptn['posts'] == 'on' && ($posttype=='post')){		
+	 				return $content;  	//return blank for exclude post ids
+	 			}
+	 		}
+		} 
+
+	global $totalposts;
+	$ex_pages = $fboptn['pagesid'];
+	$totalex_pages = explode(",",$ex_pages);
+	$allpage = get_all_page_ids();		// get all page ids of site.
+	$allpage = array_diff($allpage,$totalex_pages); // Array of all pages with excluded ids.
+   
+	/* --- custom query for fecth array of all posts id --- */
+	$argsPosts = array( 'post_type' => 'post', 'posts_per_page' => -1 );
+	$loopPosts = new WP_Query( $argsPosts );
+		while ( $loopPosts->have_posts() ) : $loopPosts->the_post();
+    		$postid = get_the_ID();
+    		$totalposts[] .= $postid;
+		endwhile;
+		wp_reset_query(); // Reset Query
+	/* --- End custom query for fecth array of all posts id --- */
 	
-		<?php
-		}
-		if ($fboptn['title'] != '') {
-			
-				$commenttitle = "<h3 class='coments-title'>";
-			$commenttitle .= $fboptn['title']."</h3>";
-		}
-		$content .= "<!-- FB Comments For Wp: http://www.vivacityinfotech.com -->".$commenttitle.$commentcount;
-
+	$totalposts = array_diff($totalposts,$totalex_pages); // Array of all posts with excluded ids.
+ 
+	/* ---Show commnet box on pages--- */
+	if (is_page($allpage) && $fboptn['pages'] == 'on'  && comments_open() && !(is_home() || is_front_page()) ) {
+		if($fboptn['appID'] != "") {
+			if ($fboptn['count'] == 'on') {
+				$commentcount = "<p class='commentcount'>";
+				$commentcount .= "<fb:comments-count href=\"".get_permalink()."\"></fb:comments-count>"." ".$fboptn['countmsg']."</p>";
+			}
+			if ($fboptn['title'] != '') {
+				$commenttitle = '<h3 class="coments-title">';
+				$commenttitle .= $fboptn['title']."</h3>";
+			}
+				$content .= "<!-- FB Comments For Wp: http://www.vivacityinfotech.net -->".$commenttitle.$commentcount;
       	if ($fboptn['html5'] == 'on') {
-			$content .=	"<div class=\"fb-comments\" data-href=\"".get_permalink()."\" data-numposts=\"".$fboptn['num']."\" data-width=\"".$fboptn['width']."\" data-colorscheme=\"".$fboptn['scheme']."\"></div>";
+				$content .=	"<div class=\"fb-comments\" data-href=\"".get_permalink()."\" data-numposts=\"".$fboptn['num']."\" data-width=\"".$fboptn['width']."\" data-colorscheme=\"".$fboptn['scheme']."\"></div>";
 
-    } else {
+    		}
+    		else {
+				$content .= "<div id=\"fb-comments-div\" class=\"fb-comments\"><fb:comments  notify=\"true\" migrated=\"1\" href=\"".get_permalink()."\" num_posts=\"".$fboptn['num']."\" width=\"".$fboptn['width']."\" colorscheme=\"".$fboptn['scheme']."\" ></fb:comments></div>";
+			}
+			if ( !empty($fboptn['pluginsite']) && $fboptn['pluginsite'] == 'on' ) {
+				$content .= '<p class="pluginsite">'.__( 'Facebook Comments Plugin Powered by', 'facebook-comment-by-vivacity' ). '<a href="http://www.vivacityinfotech.net"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
+			}
     
-    $content .= "<fb:comments href=\"".get_permalink()."\" num_posts=\"".$fboptn['num']."\" width=\"".$fboptn['width']."\" colorscheme=\"".$fboptn['scheme']."\"></fb:comments>";
-     }
+    	}
+		else {
+			$fb_adminUrl = get_admin_url()."options-general.php?page=fbcomment";
+			$content .= '<div class="error" style="color:#FF0000; font-weight:bold;"><p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comment-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comment-by-vivacity' ).'</a></p></div>';
+		}
+	}
+	/* End ---Show commnet box on pages--- */
 
-    if (!empty($fboptn['pluginsite'])) {
-    	if($fboptn['pluginsite'] == 'on'){
-      $content .= '<p class="pluginsite">'.__( 'Facebook Comments Plugin Powered by', 'facebook-comment-by-vivacity' ). '<a href="http://www.vivacityinfotech.net"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
-	}}
-    
-    }
-else {
+	/* ---Show commnet box on posts/archive/home--- */
+	if (	(is_single($totalposts) && $fboptn['posts'] == 'on' && ($posttype=='post')  && comments_open()) ||
+			(is_archive() && $fboptn['archive'] == 'on') ||
+			((is_home() || is_front_page()) && $fboptn['homepage'] == 'on')) {
+        	
+		if($fboptn['appID'] != "") {
+			if ($fboptn['count'] == 'on') {
+				$commentcount = "<p class='commentcount'>";
+				$commentcount .= "<fb:comments-count href=\"".get_permalink()."\"></fb:comments-count>"." ".$fboptn['countmsg']."</p>";
+			}
+			if ($fboptn['title'] != '') {
+				$commenttitle = '<h3 class="coments-title">';
+				$commenttitle .= $fboptn['title']."</h3>";
+			}
+				$content .= "<!-- FB Comments For Wp: http://www.vivacityinfotech.net -->".$commenttitle.$commentcount;
+			if ($fboptn['html5'] == 'on') {
+				$content .=	"<div class=\"fb-comments\" data-href=\"".get_permalink()."\" data-numposts=\"".$fboptn['num']."\" data-width=\"".$fboptn['width']."\" data-colorscheme=\"".$fboptn['scheme']."\"></div>";
+			}
+			else {
+				$content .= "<div id=\"fb-comments-div\" class=\"fb-comments\"><fb:comments notify=\"true\" migrated=\"1\" href=\"".get_permalink()."\" num_posts=\"".$fboptn['num']."\" width=\"".$fboptn['width']."\" colorscheme=\"".$fboptn['scheme']."\"></fb:comments></div>";
+			}
+
+			if (!empty($fboptn['pluginsite']) && $fboptn['pluginsite'] == 'on' ) {
+				$content .= '<p class="pluginsite">'.__( 'Facebook Comments Plugin Powered by', 'facebook-comment-by-vivacity' ). '<a href="http://www.vivacityinfotech.net"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
+			}
+		}
+		else {
+			$fb_adminUrl = get_admin_url()."options-general.php?page=fbcomment";
+			$content .= '<div class="error" style="color:#FF0000; font-weight:bold;"><p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comment-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comment-by-vivacity' ).'</a></p></div>';
+		}
+	}
+	/* End ---Show commnet box on posts/archive/home--- */  
+
+	/* ---loop for all custom post type--- */
+	foreach( $fboptn as $key => $value ) {
+		if($key == $value){  
+			$fboptn[$key];
+ 
+		/* --- custom query for fecth array of all CPT ids --- */ 
+		$args = array( 'post_type' => $fboptn[$key], 'posts_per_page' => -1 );
+		$loop = new WP_Query( $args );
+		
+		//while ( $loop->have_posts() ) : $loop->the_post();
+    		// echo $customPost = get_the_ID();
+    		// $customPostId[] .= $customPost;
+		//endwhile;
+		//wp_reset_query(); // Reset Query
+		/* End--- custom query for fecth array of all CPT ids --- */
+		//$customPostId = array_diff($customPostId,$totalex_pages); // Array of all CPT with excluded ids.
+
+		$pages =  $fboptn['pagesid'];
+			$pages1 = explode(',', $pages);
+			if(!empty($pages)){
+				foreach($pages1 as $page) {
+					if((is_single($page)) && ($fboptn['posttypes'] == 'on') && ($posttype == $fboptn[$key])){		
+						return $content;  	//return blank for exclude CPT post ids  	
+	 				}
+				}
+			} 		
+			/* ---Show commnet box on CPT posts--- */
+			if ((is_single()) && ($fboptn['posttypes'] == 'on') && ($posttype == $fboptn[$key])) {
+				if($fboptn['appID'] != "") {
+					if ($fboptn['count'] == 'on') {
+						$commentcount = "<p class='commentcount'>";
+						$commentcount .= "<fb:comments-count href=\"".get_permalink()."\"></fb:comments-count>"." ".$fboptn['countmsg']."</p>";
+					}
+					if ($fboptn['title'] != '') {
+						$commenttitle = "<h3 class='coments-title'>";
+						$commenttitle .= $fboptn['title']."</h3>";
+					}
+						$content .= "<!-- FB Comments For Wp: http://www.vivacityinfotech.net -->".$commenttitle.$commentcount;
+					if ($fboptn['html5'] == 'on') {
+						$content .=	"<div id=\"fb-comments-div\" class=\"fb-comments\" data-href=\"".get_permalink()."\" data-numposts=\"".$fboptn['num']."\" data-width=\"".$fboptn['width']."\" data-colorscheme=\"".$fboptn['scheme']."\"></div>";
+					}
+					else {
+						$content .= "<fb:comments notify=\"true\" migrated=\"1\" href=\"".get_permalink()."\" num_posts=\"".$fboptn['num']."\" width=\"".$fboptn['width']."\" colorscheme=\"".$fboptn['scheme']."\"></fb:comments>";
+					}
+
+					if (!empty($fboptn['pluginsite']) && $fboptn['pluginsite'] == 'on' ) {
+						$content .= '<p class="pluginsite">'.__( 'Facebook Comments Plugin Powered by', 'facebook-comment-by-vivacity' ). '<a href="http://www.vivacityinfotech.net"  target="_blank" >Vivacity Infotech Pvt. Ltd.</a></p>';
+					}
+ 				}
+				else {
 	$fb_adminUrl = get_admin_url()."options-general.php?page=fbcomment";
    $content .= '<div class="error" style="color:#FF0000; font-weight:bold;">
             <p>'. __( 'Please Enter Your Facebook App ID. Required for FB Comments.', 'facebook-comment-by-vivacity' ). ' <a href="'.$fb_adminUrl.'">'. __( 'Click here for FB Comments Settings page', 'facebook-comment-by-vivacity' )
             .'</a></p>
             </div>';
-   }
-  }
-   return $content;
+				}
+			}
+			/* End ---Show commnet box on CPT posts--- */
+		} 
+		  
+	}
+ 
+	/* End ---loop for all custom post type--- */ 
+	return $content;
 }
 
 
