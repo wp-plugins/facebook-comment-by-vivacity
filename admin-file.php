@@ -459,23 +459,21 @@ $domainname = str_replace('www.', '', $domainname);?>
   </div> 
 </div>		
 <div class="bottom">
-		    <h3 id="donatehere-comments" class="title"><?php _e( 'Purchase Paid Plugin', 'facebook-comment-by-vivacity' ); ?></h3>
-     <div id="donateheretbl-comments" class="togglediv">  
-     <p><?php _e( 'If you want to Purchase , please click on below image.', 'facebook-comment-by-vivacity' ); ?></p>
-	<a href="http://bit.ly/1HZGRBg " target="_blank"><img class="donate" src="<?php echo plugins_url( 'assets/banner2.png' , __FILE__ ); ?>" width="336" height="280" title="<?php _e( 'Purchase Here', 'facebook-comment-by-vivacity' ); ?>"></a>		
-  </div> 
-</div>
-
-    
-<div class="bottom">
 		    <h3 id="donatehere-comments" class="title"><?php _e( 'Donate Here', 'facebook-comment-by-vivacity' ); ?></h3>
      <div id="donateheretbl-comments" class="togglediv">  
      <p><?php _e( 'If you want to donate , please click on below image.', 'facebook-comment-by-vivacity' ); ?></p>
 	<a href="http://bit.ly/1icl56K" target="_blank"><img class="donate" src="<?php echo plugins_url( 'assets/paypal.gif' , __FILE__ ); ?>" width="150" height="50" title="<?php _e( 'Donate Here', 'facebook-comment-by-vivacity' ); ?>"></a>		
   </div> 
-</div>	
+</div>
 
-
+<div class="bottom">
+		    <h3 id="donatehere-comments" class="title"><?php _e( 'Purchase Paid Plugin', 'facebook-comment-by-vivacity' ); ?></h3>
+     <div id="donateheretbl-comments" class="togglediv">  
+     <p><?php _e( 'If you want to purchase , please click on below image.', 'facebook-comment-by-vivacity' ); ?></p>
+	<a href="http://bit.ly/1HZGRBg " target="_blank"><img class="donate" src="<?php echo plugins_url( 'assets/banner2.png' , __FILE__ ); ?>" width="336" height="280" title="<?php _e( 'Purchase Here', 'facebook-comment-by-vivacity' ); ?>"></a>		
+  </div> 
+</div>
+	
 <div class="bottom">
  <h3 id="aboutauthor-comments" class="title">About The Author</h3>
      <div id="aboutauthortbl-comments" class="togglediv">  
