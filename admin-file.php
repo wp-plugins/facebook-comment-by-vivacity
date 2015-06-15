@@ -19,6 +19,8 @@ function fbcomment_init(){
 		'pages' => 'off',
 		'pagesid' => 00,
 		'homepage' => 'off',
+		'archive' => 'off',
+		'posttypes' => 'off',
 		'appID' => '',
 		'mods' => '',
 		'num' => '6',
@@ -97,6 +99,21 @@ if (!isset($fboptn['postshideWpComments'])) {$fboptn['postshideWpComments'] = ""
 if (!isset($fboptn['pageshideWpComments'])) {$fboptn['pageshideWpComments'] = "";}
 if (!isset($fboptn['lang'])) {$fboptn['lang'] = "en_Us";}
 if (!is_numeric($fboptn['pagesid'])) {$fboptn['pagesid'] = 00;}
+if (!isset($fboptn['archive'])) {$fboptn['archive'] = "";}
+if (!isset($fboptn['posttypes'])) {$fboptn['posttypes'] = "";} 
+
+
+$args = array(
+   					'public'   => true,
+   					'_builtin' => false
+					);
+					$output = 'names'; // names or objects, note names is the default
+					$operator = 'and'; // 'and' or 'or'
+					$post_types = get_post_types( $args, $output, $operator ); 
+						foreach ( $post_types  as $post_type ) {
+							if (!isset($fboptn[$post_type])) {$fboptn[$post_type] = "";}
+						}
+
 ?>		
 <!-- get domain name -->
 <?php  $domainname = get_option('siteurl');
@@ -183,6 +200,43 @@ $domainname = str_replace('www.', '', $domainname);?>
 		<td><input id="home" name="fbcomment[homepage]" type="checkbox" value="on" <?php checked('on', $fboptn['homepage']); ?> />
 		</td>
 		</tr>
+		<tr>
+								<th><label for="archive"><?php _e( 'Archive', 'facebook-comment-by-vivacity' ); ?></label></th>
+								<td><input id="archive" name="fbcomment[archive]" type="checkbox" value="on" <?php checked('on', $fboptn['archive']); ?> />
+								</td>
+		</tr>
+		
+	<!-- ------Start Post type Settings--------- -->		
+							<tr>
+								<th><label for="posttypes"><?php _e( 'Post types', 'facebook-comment-by-vivacity' ); ?></label></th>
+								<td><input id="posttypes" name="fbcomment[posttypes]" type="checkbox" onchange="setPostypeFries()" value="on" <?php checked('on', $fboptn['posttypes']); ?> /><br>
+									<div class="postype-list">
+<?php
+										$args = array(
+   										'public'   => true,
+   										'_builtin' => false
+										);
+										$output = 'objects'; // names or objects, note names is the default
+										$operator = 'and'; // 'and' or 'or'
+										$post_types = get_post_types( $args, $output, $operator ); 
+											$i=0;
+											foreach ( $post_types  as $post_type ) {
+												$i++;
+												$disabled = 'disabled=""';
+?>
+												<div class="sub-tbl" >
+													<p class="sub-tbl-p">
+													<input id="fbcomment[<?php echo $post_type->name; ?>]" class="post-type" name="fbcomment[<?php echo $post_type->name; ?>]" type="checkbox" value="<?php echo $post_type->name; ?>" <?php if($fboptn['posttypes']==""){ echo $disabled;} ?> <?php checked($post_type->name, $fboptn[$post_type->name]); ?>/><label for="homepage"><?php echo $post_type->labels->name; ?></label>
+													</p>
+												</div>
+<?php	} ?>	
+									</div>
+								</td>
+							</tr>
+<!-- ------End Post type Settings--------- -->		
+		
+		
+		
 		<tr><th><label for="scheme"><?php _e( 'Colour Scheme', 'facebook-comment-by-vivacity' ); ?></label></th>
 		<td>
 				<select name="fbcomment[scheme]">
@@ -440,21 +494,15 @@ $domainname = str_replace('www.', '', $domainname);?>
 		    <h3 id="download-comments" class="title"><?php _e( 'Download Free Plugins', 'facebook-comment-by-vivacity' ); ?></h3>
      <div id="downloadtbl-comments" class="togglediv">  
 	<h3 class="company">
-<strong>Vivacity InfoTech Pvt. Ltd. </strong>
-<?php _e( 'has following plugins for you', 'facebook-comment-by-vivacity' ); ?> :
+<p> Vivacity InfoTech Pvt. Ltd. is an ISO 9001:2008 Certified Company is a Global IT Services company with expertise in outsourced product development and custom software development with focusing on software development, IT consulting, customized development.We have 200+ satisfied clients worldwide.</p>	
+<?php _e( 'following plugins for you', 'facebook-comment-by-vivacity' ); ?> :
 </h3>
 <ul class="">
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-twitter-feeds/">WP Twitter Feeds</a></li>
+<li><a target="_blank" href="https://wordpress.org/plugins/woocommerce-social-buttons/">Woocommerce Social Buttons</a></li>
+<li><a target="_blank" href="https://wordpress.org/plugins/vi-random-posts-widget/">Vi Random Post Widget</a></li>
+<li><a target="_blank" href="http://wordpress.org/plugins/wp-infinite-scroll-posts/">WP EasyScroll Posts</a></li>
+<li><a target="_blank" href="https://wordpress.org/plugins/buddypress-social-icons/">BuddyPress Social Icons</a></li>
 <li><a target="_blank" href="http://wordpress.org/plugins/wp-fb-share-like-button/">WP Facebook Like Button</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-facebook-fanbox-widget/">WP Facebook FanBox</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-google-analytics-scripts/">WP Google Analytics Scripts</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-xml-sitemap/">WP XML Sitemap</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-facebook-auto-publish/">WP Facebook Auto Publish</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-twitter-autopost/">WP Twitter Autopost</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-responsive-jquery-slider/">WP Responsive Jquery Slider</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-google-plus-one-button/">WP Google Plus One Button</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-qr-code-generator/">WP QR Code Generator</a></li>
-<li><a target="_blank" href="http://wordpress.org/plugins/wp-inquiry-form/">WP Inquiry Form</a></li>
 </ul>
   </div> 
 </div>		
@@ -466,31 +514,19 @@ $domainname = str_replace('www.', '', $domainname);?>
   </div> 
 </div>	
 <div class="bottom">
- <h3 id="aboutauthor-comments" class="title">About The Author</h3>
-     <div id="aboutauthortbl-comments" class="togglediv">  
-	<p> <strong>Vivacity InfoTech Pvt. Ltd. , an ISO 9001:2008 Certified Company,</strong>is a Global IT Services company with expertise in outsourced product development and custom software development with focusing on software development, IT consulting, customized development.We have 200+ satisfied clients worldwide.</p>	
-<h3 class="company">
-<strong>Vivacity InfoTech Pvt. Ltd.</strong>
-has expertise in :
-</h3>
-<ul class="">
-<li>Outsourced Product Development</li>
-<li>Customized Solutions</li>
-<li>Web and E-Commerce solutions</li>
-<li>Multimedia and Designing</li>
-<li>ISV Solutions</li>
-<li>Consulting Services</li>
-<li>
-<a target="_blank" href="http://www.lemonpix.com/">
-<span class="colortext">Web Hosting</span>
-</a>
-</li>
- <h3>
- <strong><a target="_blank" href="http://vivacityinfotech.net/contact-us/" >Contact Us Here</a></strong>
- </h3>
-</ul>
+		    <h3 id="donatehere-comments-wvpd" class="title"><?php _e( 'Woocommerce Frontend Plugin', 'wvpd' ); ?></h3>
+     <div id="donateheretbl-comments-wvpd" class="togglediv">  
+     <p><?php _e( 'If you want to purchase , please click on below image.', 'wvpd' ); ?></p>
+	<a href="http://bit.ly/1HZGRBg" target="_blank"><img class="donate" src="<?php echo plugins_url( 'assets/woo_frontend_banner.png' , __FILE__ ); ?>" width="336" height="280" title="<?php _e( 'Donate Here', 'wvpd' ); ?>"></a>		
   </div> 
-</div>	
+</div>
+<div class="bottom">
+		    <h3 id="donatehere-comments-wvpd" class="title"><?php _e( 'Blue Frog Template', 'wvpd' ); ?></h3>
+     <div id="donateheretbl-comments-wvpd" class="togglediv">  
+     <p><?php _e( 'If you want to purchase , please click on below image.', 'wvpd' ); ?></p>
+	<a href="http://bit.ly/1Gwp4Vv" target="_blank"><img class="donate" src="<?php echo plugins_url( 'assets/blue_frog_banner.png' , __FILE__ ); ?>" width="336" height="280" title="<?php _e( 'Donate Here', 'wvpd' ); ?>"></a>		
+  </div> 
+</div>
 	</center>
  </div><!-- --------End of right div--------- -->
 </div> <!-- --------End of inner_wrap--------- -->
