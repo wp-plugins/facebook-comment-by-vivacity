@@ -4,12 +4,12 @@ Donate link: http://bit.ly/1icl56K
 Tags: Facebook Comments, Comments , Social Plugin, Facebook, Comment ,Social, Open Graph, Opengraph, Protocol , XFBML , HTML5 , Moderation , Moderator, shortcode , template , template shortcode , WP comments , WP default comments.
 License: GPLv2 or later
 Requires at least:3.0
-Tested up to: 4.2
-Stable tag: 1.0.9
+Tested up to: 4.2.2
+Stable tag: 1.2
 
 == Description ==
 
-A simple Facebook Comments plugin for your website.It`s a social plugin for enables Facebook users commenting on your site.There are options for enable Facebook comments on posts/pages/home and also you can control accessibility of it on pages of your website.
+A simple Facebook Comments plugin for your website. It's a social plugin for enables Facebook users commenting on your site. There are options for enable Facebook comments on posts/pages/home and also you can control accessibility of it on pages of your website.
 
 You cab also customize setting for following features:
 
@@ -25,6 +25,12 @@ You cab also customize setting for following features:
 * Multi-languages support is also available.
 * Option for select Facebook comment box language from a bunch of different languages to display Facebook comment box into your native language.
 * POT file is added for plugin translation into your languages.
+* Added option for enable /disable FB comment-box from CPTs.
+* Optional checkbox for hide/show Fb comments box on Archive pages.
+* Updated option for exclude Fb comment box using id's. Now you can control accessibility of FB comment-box on pages/posts/CPT by providing id's.
+* Added options for add CSS classes to titles.
+
+
 = Translators =
 
 * English(US) (en_Us) - [Team Vivacity](http://vivacityinfotech.net/)
@@ -78,6 +84,16 @@ For Example:
 
 [vivafbcomment url="http://vivacityinfotech.net/" width="375" count="on" num="6" countmsg="awesome comments"]
 
+= How to hide Facebook Comment Box position on any page if checkbox enabled for all pages =
+You can remove Facebook Comment Box from some pages , if "Pages " checkbox enabled for pages. For this please insert page ids separate them with commas,[ like 5, 21] in "Exclude Using Page IDs" field.
+
+You can remove Facebook like button from some pages , if "show on page " checkbox enabled for pages. For this please insert page ids separate them with commas,[ like 5, 21] in "Exclude Using Page IDs" field.
+
+= How can change position of FB commentbox  =
+By default Fb commentbox appended with the_content filter hook of WP so it display under the_content section.
+If you want to change position then you need to disable check-box for post/page/home and add shortcode echo do_shortcode('[vivafbcomment]'); code into your template/home/page/single php file.
+
+
 == Screenshots ==
 
 1. "Facebook Comments by Vivacity" plugin installed and appears in the plugins menu.
@@ -87,12 +103,20 @@ For Example:
 
 == Changelog ==
 
+= 1.2 =
+* Optional checkbox for hide/show Fb comments box on Archive pages.
+* Updated option for exclude Fb comment box using id's. Now you can control accessibility of FB comment-box on pages/posts/CPT by providing id's.
+* Added options for add CSS classes to titles.
+* Updated option for enable /disable FB comment-box from CPTs.
+
+= 1.1.0 =
+* Added option for enable /disable FB comment-box from CPTs.
+
 = 1.0.9 =
 * Rolled back to 1.0.6 version due to having bugs in new version.
 
 = 1.0.6 =
 * Now you can control accessbility of facebook comment box on pages by providing page id's.
-
 
 = 1.0.5 =
 * Added CSS classes to titles.
