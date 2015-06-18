@@ -467,7 +467,7 @@ $domainname = str_replace('www.', '', $domainname);?>
 </div>
 <!-- Purchase Plugin Code-->
 <div class="bottom">
-		    <h3 id="donatehere-comments" class="title"><?php _e( 'Purchase Paid Plugin', 'facebook-comment-by-vivacity' ); ?></h3>
+		    <h3 id="donatehere-comments" class="title"><?php _e( 'Woocommerce Front End Plugin', 'facebook-comment-by-vivacity' ); ?></h3>
      <div id="donateheretbl-comments" class="togglediv">  
      <p><?php _e( 'If you want to purchase , please click on below image.', 'facebook-comment-by-vivacity' ); ?></p>
 	<a href="http://bit.ly/1HZGRBg" target="_blank"><img class="donate" src="<?php echo plugins_url( 'assets/banner2.png' , __FILE__ ); ?>" width="336" height="280" title="<?php _e( 'Purchase Here', 'facebook-comment-by-vivacity' ); ?>"></a>		
